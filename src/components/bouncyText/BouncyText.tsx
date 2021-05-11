@@ -17,7 +17,7 @@ const BouncyText: React.FC<{ text: string; offset: number }> = ({
     }, []);
 
     return (
-        <div>
+        <p>
             {Array.from({ length: text.length }, (_, idx) => {
                 return (
                     <BouncyWord
@@ -36,7 +36,7 @@ const BouncyText: React.FC<{ text: string; offset: number }> = ({
                     </BouncyWord>
                 );
             })}
-        </div>
+        </p>
     );
 };
 

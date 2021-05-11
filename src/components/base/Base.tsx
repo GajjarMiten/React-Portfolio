@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
+import { colors } from "../../style/global";
 
 const spark = keyframes`
     from{
         opacity:0;
     }
     to{
-        opacity:0.8;
+        opacity:1;
     }
 `;
 
 const Dot = styled.circle`
-    opacity: ${Math.random()};
-    fill: white;
+    opacity: ${1};
     animation: ${spark} 3s linear infinite alternate;
 `;
 
@@ -33,7 +33,6 @@ const Container = styled(Wrapper)`
 
 const Base: React.FC = (props) => {
     const [dots, setDots] = useState<any>([]);
-
     const updateDots = (svg: any) => {
         const newDots = Array.from({ length: 100 }, (item, idx) => {
             return (
@@ -45,6 +44,7 @@ const Base: React.FC = (props) => {
                     style={{
                         animationDelay: `${Math.random()}s`,
                         transition: `all 15s linear`,
+                        fill: `#${colors[idx % colors.length]}`,
                     }}
                 />
             );
@@ -80,7 +80,7 @@ const Base: React.FC = (props) => {
                     position: "absolute",
                     top: "0",
                     left: "0",
-                    zIndex: 4,
+                    zIndex: 0,
                 }}
             >
                 {dots}

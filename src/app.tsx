@@ -4,6 +4,7 @@ import styled, { ThemeProvider } from "styled-components";
 import Navbar from "./components/navbar/Navbar";
 import Base from "./components/base/Base";
 import EntryPage from "./pages/entrypage/EntryPage";
+import AboutPage from "./pages/aboutpage/AboutPage";
 
 const AppWrapper = styled.main`
     height: 100vh;
@@ -22,6 +23,7 @@ const App: React.VFC = () => {
                     <Navbar />
                     <Base>
                         <EntryPage />
+                        <AboutPage />
                     </Base>
                 </AppWrapper>
             </ThemeProvider>
