@@ -1,8 +1,13 @@
 import React from "react";
-import { Wrapper } from "./EntryPage.style";
+import BouncyText from "../../components/bouncyText/BouncyText";
+import Wrapper from "../../components/wrapper/Wrapper";
 
 const EntryPage: React.VFC = () => {
-    return <Wrapper>Miten</Wrapper>;
+    return (
+        <Wrapper>
+            <BouncyText text="About&nbsp;Me" offset={400} />
+        </Wrapper>
+    );
 };
 
 export default EntryPage;

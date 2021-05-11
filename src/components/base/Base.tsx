@@ -6,7 +6,7 @@ const spark = keyframes`
         opacity:0;
     }
     to{
-        opacity:0.7;
+        opacity:0.8;
     }
 `;
 
@@ -28,6 +28,7 @@ const Container = styled(Wrapper)`
     top: 0;
     left: 0;
     overflow: scroll;
+    z-index: 10;
 `;
 
 const Base: React.FC = (props) => {
@@ -40,10 +41,10 @@ const Base: React.FC = (props) => {
                     key={idx}
                     cx={Math.floor(Math.random() * svg.clientWidth)}
                     cy={Math.floor(Math.random() * svg.clientHeight)}
-                    r={Math.floor(Math.random() * 5 + 2)}
+                    r={Math.floor(Math.random() * 3 + 2)}
                     style={{
                         animationDelay: `${Math.random()}s`,
-                        transition: `all 10s linear`,
+                        transition: `all 15s linear`,
                     }}
                 />
             );
@@ -51,16 +52,16 @@ const Base: React.FC = (props) => {
         setDots(newDots);
     };
 
-    useEffect(() => {
-        const svg = document.querySelector("svg")!;
-        updateDots(svg);
-        setTimeout(() => {
-            animate(svg);
-        }, 100);
-        setInterval(() => {
-            animate(svg);
-        }, 10000);
-    }, []);
+    // useEffect(() => {
+    //     const svg = document.querySelector("svg")!;
+    //     updateDots(svg);
+    //     setTimeout(() => {
+    //         animate(svg);
+    //     }, 100);
+    //     setInterval(() => {
+    //         animate(svg);
+    //     }, 15000);
+    // }, []);
 
     const animate = (svg: any) => {
         const circles = document.querySelectorAll("circle");
@@ -76,11 +77,10 @@ const Base: React.FC = (props) => {
                 height="100%"
                 width="100%"
                 style={{
-                    border: "solid 2px white",
                     position: "absolute",
                     top: "0",
                     left: "0",
-                    zIndex: 0,
+                    zIndex: 4,
                 }}
             >
                 {dots}
