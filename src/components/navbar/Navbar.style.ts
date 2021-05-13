@@ -33,10 +33,10 @@ const NavItem = styled.a.attrs({ href: "1#" })`
         color: ${({ theme }) => theme.accentColor};
     }
     i {
-        font-size: 1.7rem;
+        font-size: 2.6rem;
     }
     p {
-        font-size: 0.7rem;
+        font-size: 1.0rem;
         display: none;
     }
     &:hover {
@@ -54,7 +54,7 @@ const NavItems = styled.ul`
     ${column};
     align-items: center;
     width: 100%;
-    gap: 8px;
+    gap: 2rem;
 `;
 
 const SocialItems = styled(NavItems)`
@@ -64,7 +64,7 @@ const SocialItems = styled(NavItems)`
 
 const SocialItem = styled(NavItem)`
     i {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
     &:hover {
         i {

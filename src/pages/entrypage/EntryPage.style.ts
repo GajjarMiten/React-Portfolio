@@ -2,14 +2,13 @@ import styled from "styled-components";
 import { center } from "../../style/global";
 
 const Container = styled.div`
-    ${center}
-    height: fit-content;
-    width: fit-content;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
     min-height: 400px;
     min-width: 500px;
     position: relative;
     flex-direction: column;
-    padding: 1rem;
 `;
 
 const Blur = styled.div`
@@ -24,8 +23,4 @@ const Blur = styled.div`
     /* filter: blur(px); */
 `;
 
-const TextContainer = styled(Container)`
-    z-index: 3;
-`;
-
-export { Container, Blur, TextContainer };
+export { Container, Blur };

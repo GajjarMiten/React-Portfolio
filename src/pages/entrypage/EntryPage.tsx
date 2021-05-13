@@ -1,25 +1,20 @@
 import React from "react";
 import BouncyText from "../../components/bouncyText/BouncyText";
 import Wrapper from "../../components/wrapper/Wrapper";
-import { Container, Blur, TextContainer } from "./EntryPage.style";
+import { Text } from "../../global/GlobalComponents";
+import { Container, Blur } from "./EntryPage.style";
 
 const EntryPage: React.VFC = () => {
     return (
-        <Wrapper
-            style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-            }}
-        >
+        <Wrapper>
             <Container>
-                <Blur />
-                <TextContainer>
-                    <BouncyText text="Hi," offset={200} />
-                    <BouncyText text="I'm&nbsp;Miten," offset={200} />
-                    <BouncyText text="Flutter&nbsp;Developer," offset={200} />
-                    {/*dept. of enthusiasm */}
-                </TextContainer>
+                <Text style={{ fontSize: "4rem" }}>Hi,</Text>
+                <BouncyText text="I'm&nbsp;Miten," offset={200} index={4} />
+                <Text style={{ fontSize: "4rem" }}>
+                    On a way to be creative.
+                </Text>
+                <Text>I am self-taught, independent developer from</Text>
+                <Text>Gujarat, India.</Text>
             </Container>
         </Wrapper>
     );

@@ -1,15 +1,8 @@
 import React, { useEffect, useState } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { colors } from "../../style/global";
 
-const spark = keyframes`
-    from{
-        opacity:0;
-    }
-    to{
-        opacity:1;
-    }
-`;
+import { spark } from "../../style/animations";
 
 const Dot = styled.circle`
     opacity: ${1};
@@ -23,7 +16,7 @@ const Wrapper = styled.div`
     /* overflow:hidden */
 `;
 
-const Container = styled(Wrapper)`
+const Container = styled(Wrapper).attrs({ id: "container" })`
     position: absolute;
     top: 0;
     left: 0;
