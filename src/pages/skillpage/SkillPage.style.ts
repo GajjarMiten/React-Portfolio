@@ -32,12 +32,13 @@ const ParallexWrapper = styled.div.attrs({ id: "parallex-wrapper" })`
     flex: 1;
     height: 100%;
     width: 100%;
-    transition: all 0.1s linear;
     display: flex;
+    overflow: hidden;
 `;
 
 const Parallex = styled.div.attrs({ id: "parallex" })`
     position: relative;
+    transition: all 0.1s linear;
     height: 100%;
     width: 100%;
 `;

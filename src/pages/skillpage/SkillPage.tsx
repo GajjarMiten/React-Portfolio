@@ -25,6 +25,17 @@ const SkillPage = () => {
             y = 10 - (e.clientY - h) * 0.03;
             parallex.style.transform = `translate3d(${x}px,${y}px,0)`;
         });
+   
+        // const container = document.getElementById(
+        //     "container"
+        // ) as HTMLDivElement;
+
+        // container.addEventListener("scroll", () => {
+        //     let h = window.innerHeight / 2;
+        //     let y = parallex.getBoundingClientRect().top;
+        //     y = 10 - (y - h) * 0.1;
+        //     parallex.style.transform = `translate3d(0,${y}px,0)`;
+        // });
 
         return () => {};
     }, []);
@@ -33,9 +44,6 @@ const SkillPage = () => {
         <Wrapper>
             <BottomBorder>
                 <BouncyText text="Skills" offset={500} />
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
             </BottomBorder>
             <Container>
                 <Text style={{ marginTop: "2rem" }}>

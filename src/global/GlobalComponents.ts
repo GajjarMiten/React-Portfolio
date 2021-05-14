@@ -8,6 +8,7 @@ const Text = styled.p`
 
 const BottomBorder = styled.div`
     border-bottom: ${({ theme }) => `dashed 2px ${theme.accentColor}`};
+    padding-bottom:2rem;
 `;
 
 export { Text, BottomBorder };

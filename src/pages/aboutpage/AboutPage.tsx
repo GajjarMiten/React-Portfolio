@@ -10,9 +10,6 @@ const AboutPage = () => {
         <Wrapper>
             <BottomBorder>
                 <BouncyText text="About&nbsp;Me" offset={400} />
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
             </BottomBorder>
             <Container>
                 <About>

@@ -22,6 +22,9 @@ const Container = styled(Wrapper).attrs({ id: "container" })`
     left: 0;
     overflow: scroll;
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 `;
 
 const Base: React.FC = (props) => {
