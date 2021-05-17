@@ -1,5 +1,6 @@
-import { createGlobalStyle, css, DefaultTheme } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import { bounce, bounceIn } from "./animations";
+import { device } from "./mediaQueries";
 
 const GlobalStyle = createGlobalStyle`
     *{
@@ -19,6 +20,16 @@ const GlobalStyle = createGlobalStyle`
         animation-name: ${bounceIn};
         animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
      }
+
+     .skill-svg{
+         @media ${device.laptop}{
+             transform:scale(1.2);
+
+         }
+         @media ${device.tablet}{
+             transform:scale(1.5);
+         }
+     }
     
    
 `;
@@ -31,6 +42,7 @@ const theme = {
     accentColor: "#a770ef",
     navBackGround: "#181818",
     navbarWidth: "80px",
+    navbarWidthMD: "60px",
     headingColor: "white",
     headingLG: "5rem",
     headingMD: "3rem",
@@ -56,13 +68,4 @@ const colors = [
     "f9f871",
 ];
 
-const column = css`
-    display: flex;
-    flex-direction: column;
-`;
-const center = css`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`;
-export { GlobalStyle, theme, column, center, colors };
+export { GlobalStyle, theme, colors };

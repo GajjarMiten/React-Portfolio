@@ -17,7 +17,7 @@ const WorkPage = () => {
     return (
         <Wrapper>
             <BottomBorder>
-                <BouncyText offset={600} text="Things&nbsp;I've&nbsp;built" />
+                <BouncyText id={400} text="Experiments" />
             </BottomBorder>
             <Container>
                 <ProjectCard img={b2b} tech={["ReactJS", "Firebase"]} />
@@ -41,9 +41,7 @@ const ProjectCard: React.FC<{ img: string; tech: string[] }> = ({
 }) => {
     return (
         <ProjectCardStyle>
-            <ProjectImg>
-                <img src={img} alt="img" aria-hidden />
-            </ProjectImg>
+            <ProjectImg style={{ backgroundImage: `url(${b2b})` }}></ProjectImg>
             <ProjectInfo>
                 <h1 className="title">bitstobytes.in</h1>
                 <div className="info">
@@ -52,9 +50,6 @@ const ProjectCard: React.FC<{ img: string; tech: string[] }> = ({
                         Ad consectetur, neque, sunt autem optio aliquid
                         veritatis doloribus. Lorem ipsum, dolor sit amet
                         consectetur adipisicing elit. Cumque doloribus, nam
-                        libero provident consectetur repudiandae corrupti
-                        molestiae quaerat sint nihil quas quia ipsam? Id
-                        corrupti laboriosam illo accusantium maiores laudantium.
                     </p>
                 </div>
                 <ul className="tech">

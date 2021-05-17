@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { colors } from "../../style/global";
 
 import { spark } from "../../style/animations";
+import { device } from "../../style/mediaQueries";
 
 const Dot = styled.circle`
     opacity: ${1};
@@ -24,7 +25,11 @@ const Container = styled(Wrapper).attrs({ id: "container" })`
     z-index: 10;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 13rem;
+    @media ${device.tablet} {
+        gap: 3rem;
+    }
+    /* height: fit-content; */
 `;
 
 const Base: React.FC = (props) => {

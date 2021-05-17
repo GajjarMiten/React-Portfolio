@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { device } from "../../style/mediaQueries";
 
 const Email = styled.a.attrs({ href: "mailto:miten3377@gmail.com" })`
     text-decoration: none;
@@ -25,6 +26,12 @@ const Email = styled.a.attrs({ href: "mailto:miten3377@gmail.com" })`
         height: 4px;
         width: 300px;
         border: solid 1px white;
+    }
+    @media ${device.laptop} {
+        font-size: ${({ theme }) => "0.8rem"};
+    }
+    @media ${device.tablet} {
+        display: none;
     }
 `;
 

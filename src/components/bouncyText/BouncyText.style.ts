@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../style/mediaQueries";
 // import {colors} from "../../style/global"
 
 const BouncyWord = styled.span.attrs({ className: "word" })`
@@ -16,6 +17,9 @@ const BouncyWord = styled.span.attrs({ className: "word" })`
     &:hover {
         cursor: pointer;
         color: ${({ theme }) => theme.accentColor};
+    }
+    @media ${device.laptop} {
+        font-size: ${({ theme }) => theme.headingMD};
     }
 `;
 

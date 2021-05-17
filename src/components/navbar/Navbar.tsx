@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../favicon.png";
-import {
-    Nav,
-    NavBrand,
-    NavItem,
-    NavItems,
-    SocialItem,
-    SocialItems,
-} from "./Navbar.style";
+import { Nav, NavBrand, NavItem, NavItems } from "./Navbar.style";
+
+import { handleNavClick } from "../../helpers/helpers";
+
+const navItems = [
+    { icon: "las la-home", title: "HOME" },
+    { icon: "las la-user-circle", title: "ABOUT" },
+    { icon: "las la-cog", title: "SKILL" },
+    { icon: "las la-trophy", title: "WORK" },
+    { icon: "las la-envelope", title: "CONTACT" },
+];
 
 const Navbar = () => {
     return (
@@ -16,28 +19,21 @@ const Navbar = () => {
                 <img src={logo} alt="logo" />
             </NavBrand>
             <NavItems>
-                <NavItem className="active">
-                    <i className="las la-home"></i>
-                    <p>HOME</p>
-                </NavItem>
-                <NavItem>
-                    <i className="las la-user-circle"></i>
-                    <p>ABOUT</p>
-                </NavItem>
-                <NavItem>
-                    <i className="las la-cog"></i>
-                    <p>SKILLS</p>
-                </NavItem>
-                <NavItem>
-                    <i className="las la-trophy"></i>
-                    <p>WORK</p>
-                </NavItem>
-                <NavItem>
-                    <i className="las la-envelope"></i>
-                    <p>CONTACT</p>
-                </NavItem>
+                {navItems.map((item, idx) => {
+                    return (
+                        <NavItem
+                            className={idx === 0 ? "active" : ""}
+                            key={idx}
+                            id={idx.toString()}
+                            onClick={(e) => handleNavClick(idx, navItems)}
+                        >
+                            <i className={`${item.icon}`}></i>
+                            <p>{item.title}</p>
+                        </NavItem>
+                    );
+                })}
             </NavItems>
-            <SocialItems>
+            {/* <SocialItems>
                 <SocialItem>
                     <i className="lab la-github"></i>
                 </SocialItem>
@@ -53,7 +49,7 @@ const Navbar = () => {
                 <SocialItem>
                     <i className="lab la-instagram"></i>
                 </SocialItem>
-            </SocialItems>
+            </SocialItems> */}
         </Nav>
     );
 };

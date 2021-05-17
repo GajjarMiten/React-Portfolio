@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { column } from "../../style/global";
+import { column } from "../../style/utils";
 
 const Container = styled.div`
     flex: 1;

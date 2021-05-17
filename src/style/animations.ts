@@ -48,4 +48,22 @@ const spark = keyframes`
     }
 `;
 
-export { bounce, bounceIn, spark };
+const wave = keyframes`
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin-left: -1600px;
+    }
+  `;
+
+const swell = keyframes`
+    0%, 100% {
+      transform: translate3d(0,-25px,0);
+    }
+    50% {
+      transform: translate3d(0,5px,0);
+    }
+  `;
+
+export { bounce, bounceIn, spark, wave, swell };
