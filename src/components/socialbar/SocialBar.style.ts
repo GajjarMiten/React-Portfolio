@@ -70,7 +70,7 @@ const SocialBarWrapper = styled.div`
         border-top-right-radius: 50px;
     }
 
-    @media ${device.laptop} {
+    @media ${device.laptopL} {
         transform: scale(0.7);
         top: -30px;
     }

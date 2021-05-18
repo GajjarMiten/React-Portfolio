@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { center } from "../../style/global";
+import { device } from "../../style/mediaQueries";
 
 const Container = styled.div`
     display: flex;
@@ -9,6 +9,9 @@ const Container = styled.div`
     min-width: 500px;
     position: relative;
     flex-direction: column;
+    @media ${device.mobileL} {
+        min-width: 100%;
+    }
 `;
 
 const Blur = styled.div`

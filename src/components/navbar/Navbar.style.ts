@@ -12,7 +12,7 @@ const Nav = styled.nav`
     width: ${({ theme }) => theme.navbarWidth};
     background: ${({ theme }) => theme.navBackGround};
 
-    @media ${device.laptop} {
+    @media ${device.laptopL} {
         width: ${({ theme }) => theme.navbarWidthMD};
     }
     @media ${device.tablet} {
@@ -20,6 +20,10 @@ const Nav = styled.nav`
         width: 100vw;
         height: ${({ theme }) => theme.navbarWidth};
         flex-direction: row;
+    }
+
+    @media ${device.mobileL} {
+        padding: 0 20px;
     }
 `;
 
@@ -45,6 +49,10 @@ const NavBrand = styled.a.attrs({ href: "/" })`
     @media ${device.tablet} {
         height: 40px;
         width: 40px;
+    }
+
+    @media ${device.mobileL} {
+        display: none;
     }
 `;
 
@@ -109,28 +117,48 @@ const NavItems = styled.ul`
     gap: 2rem;
     flex: 1;
 
+    @media ${device.laptopL} {
+        gap: 8px;
+    }
+
     @media ${device.tablet} {
         flex-direction: row;
         justify-content: flex-end;
         flex: 0;
     }
-`;
 
-const SocialItems = styled(NavItems)`
-    max-height: 150px;
-    gap: 4px;
-`;
-
-const SocialItem = styled(NavItem)`
-    i {
-        font-size: 1.6rem;
+    @media ${device.mobileL} {
+        justify-content: center;
+        flex: 1;
     }
+`;
+
+const ExtraItems = styled(NavItems)`
+    max-height: 150px;
+    gap: 8px;
+
+    @media ${device.laptopL} {
+        max-height: 130px;
+        gap: 4px;
+    }
+    @media ${device.mobileL} {
+        display: none;
+    }
+`;
+
+const ExtraItem = styled(NavItem)`
     &:hover {
         i {
             display: block;
             color: ${({ theme }) => theme.accentColor};
         }
     }
+
+    @media ${device.laptopL} {
+        i {
+            font-size: 1.6rem;
+        }
+    }
 `;
 
-export { Nav, NavBrand, NavItem, NavItems, SocialItem, SocialItems };
+export { Nav, NavBrand, NavItem, NavItems, ExtraItem, ExtraItems };

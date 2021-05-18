@@ -7,11 +7,12 @@ import { Container } from "./ContactPage.style";
 const ContactPage = () => {
     return (
         <Wrapper style={{ minHeight: "100vh", padding: "0" }}>
-            <BottomBorder style={{ margin: "0 100px" }}>
+            <BottomBorder marginH={100}>
                 <BouncyText id={500} text="Say&nbsp;Hello!!" />
             </BottomBorder>
             <Container>
-                <Wave height={220} delay={0} />
+                {/* <Wave height={190} delay={4} />
+                <Wave height={170} delay={0} /> */}
             </Container>
         </Wrapper>
     );
@@ -49,12 +50,13 @@ const Wave: React.FC<{ height: number; delay: number }> = ({
                 <stop offset="100%" stopColor="#FDB99B" />
             </linearGradient>
             <path
-                stroke="wheat"
+                stroke="rgba(255,255,255,0.5)"
                 fill="url(#grad1)"
+                style={{ filter: "drop-shadow(0 -5px 25px rgba(0,0,0,0.15))" }}
                 d="M0 67 C 273,183 822,-40 1920.00,106 V 359 H 0 V 67 Z"
             >
                 <animate
-                    repeatCount="15"
+                    repeatCount="indefinite"
                     fill="url(#grad1)"
                     attributeName="d"
                     begin={`${delay}s`}

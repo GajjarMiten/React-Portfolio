@@ -2,8 +2,10 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import profile from "../../assets/me.jpg";
 import { device } from "../../style/mediaQueries";
+import { motion } from "framer-motion";
+import useInViewAnimate from "../../hooks/useInViewAnimate";
 
-const ProfileStyle = styled.img.attrs({ id: "profile" })`
+const ProfileStyle = styled(motion.img).attrs({ id: "profile" })`
     place-self: center;
     max-width: 400px;
     max-height: 400px;
@@ -18,21 +20,36 @@ const ProfileStyle = styled.img.attrs({ id: "profile" })`
     }
 `;
 
-const Profile = () => {
-    useEffect(() => {
-        const container = document.getElementById("container")!;
-        const profile = document.getElementById("profile")!;
-        container.addEventListener("scroll", () => {
-            let pos = profile.getBoundingClientRect().top;
-            if (pos < 700) {
-                profile.style.transform = "translateX(0)";
-                profile.style.opacity = "1";
-            }
-        });
-        return () => {};
-    }, []);
+const profileVariants = {
+    hidden: {
+        opacity: 0,
+        x: "100%",
+    },
+    visible: {
+        opacity: 1,
+        x: "0",
+        transition: {
+            type: "spring",
+            stiffness: 120,
+            duration: 0.8,
+        },
+    },
+};
 
-    return <ProfileStyle src={profile} loading="lazy" alt="profile" />;
+const Profile = () => {
+    const { ref, controls } = useInViewAnimate("hidden", "visible");
+
+    return (
+        <ProfileStyle
+            src={profile}
+            loading="lazy"
+            alt="profile"
+            ref={ref}
+            variants={profileVariants}
+            initial="hidden"
+            animate={controls}
+        />
+    );
 };
 
 export default Profile;

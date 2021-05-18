@@ -10,32 +10,33 @@ import {
     Skills,
     SkillWrapper,
 } from "./SkillPage.style";
+import SlideInWhenIn from "../../hoc/SlideInWhenIn";
 
 const SkillPage = () => {
     useEffect(() => {
         const wrapper = document.getElementById("parallex-wrapper")!;
         const parallex = document.getElementById("parallex") as HTMLDivElement;
 
-        let x = 0;
-        let y = 0;
-        wrapper.addEventListener("mousemove", (e) => {
-            let w = window.innerWidth / 2;
-            let h = window.innerHeight / 2;
-            x = 10 - (e.clientX - w) * 0.03;
-            y = 10 - (e.clientY - h) * 0.03;
-            parallex.style.transform = `translate3d(${x}px,${y}px,0)`;
-        });
-
-        // const container = document.getElementById(
-        //     "container"
-        // ) as HTMLDivElement;
-
-        // container.addEventListener("scroll", () => {
+        // let x = 0;
+        // let y = 0;
+        // wrapper.addEventListener("mousemove", (e) => {
+        //     let w = window.innerWidth / 2;
         //     let h = window.innerHeight / 2;
-        //     let y = parallex.getBoundingClientRect().top;
-        //     y = 10 - (y - h) * 0.1;
-        //     parallex.style.transform = `translate3d(0,${y}px,0)`;
+        //     x = 10 - (e.clientX - w) * 0.03;
+        //     y = 10 - (e.clientY - h) * 0.03;
+        //     parallex.style.transform = `translate3d(${x}px,${y}px,0)`;
         // });
+
+        const container = document.getElementById(
+            "container"
+        ) as HTMLDivElement;
+
+        container.addEventListener("scroll", () => {
+            let h = window.innerHeight / 2;
+            let y = parallex.getBoundingClientRect().top;
+            y = 10 - (y - h) * 0.16;
+            parallex.style.transform = `translate3d(0,${y}px,0)`;
+        });
 
         return () => {};
     }, []);
@@ -46,14 +47,17 @@ const SkillPage = () => {
                 <BouncyText text="Skills" id={300} />
             </BottomBorder>
             <Container>
-                <Text style={{ marginTop: "2rem" }}>
-                    I spent my most of time by creating UI and Interfaces for
-                    websites & applications. Lorem ipsum dolor, sit amet
-                    consectetur adipisicing elit. Incidunt a, cumque
-                    reprehenderit quaerat placeat fugiat maxime enim autem.
-                    Ipsam veritatis alias magnam temporibus harum, cupiditate
-                    at? Eveniet inventore ducimus hic. Lorem ipsum dolor sit,
-                </Text>
+                <SlideInWhenIn>
+                    <Text style={{ marginTop: "2rem" }}>
+                        I spent my most of time by creating UI and Interfaces
+                        for websites & applications. Lorem ipsum dolor, sit amet
+                        consectetur adipisicing elit. Incidunt a, cumque
+                        reprehenderit quaerat placeat fugiat maxime enim autem.
+                        Ipsam veritatis alias magnam temporibus harum,
+                        cupiditate at? Eveniet inventore ducimus hic. Lorem
+                        ipsum dolor sit,
+                    </Text>
+                </SlideInWhenIn>
                 <SkillWrapper>
                     <ParallexWrapper>
                         <Parallex>

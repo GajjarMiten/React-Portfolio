@@ -39,7 +39,7 @@ const animateTitle = (offset: number) => {
         });
     };
 
-    if (pos < 700 && offset === 100) {
+    if (pos < 900 && offset === 100) {
         animate();
     }
     const container = document.getElementById("container")! as HTMLDivElement;

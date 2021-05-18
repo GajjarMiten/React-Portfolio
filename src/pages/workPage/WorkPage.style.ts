@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { device } from "../../style/mediaQueries";
 import { center } from "../../style/utils";
@@ -6,19 +7,24 @@ const Container = styled.div`
     margin-top: 6rem;
     flex: 1;
     width: 100%;
-    padding: 0 150px;
+    padding: 0 20px;
     display: grid;
     grid-template-columns: 1fr;
     gap: 10rem;
     grid-auto-rows: minmax(500px, 1fr);
 
+    @media ${device.laptopL} {
+        padding: 0;
+        gap: 0;
+    }
     @media ${device.tablet} {
         padding: 0;
-        gap: 0rem;
+    }
+    @media ${device.mobileL} {
     }
 `;
 
-const ProjectCardStyle = styled.div`
+const ProjectCardStyle = styled(motion.div)`
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: 1fr;
@@ -57,10 +63,27 @@ const ProjectCardStyle = styled.div`
             }
         }
     }
+    @media ${device.mobileL} {
+        max-height: 100%;
+        display: block;
+        &:nth-of-type(even) {
+            .project-info {
+                .title {
+                    place-self: center;
+                    text-align: center;
+                }
+                .tech,
+                .links {
+                    padding: 0;
+                    justify-content: center;
+                }
+            }
+        }
+    }
 `;
 
 const ProjectImg = styled.div.attrs({ className: "img" })`
-    grid-column: 1/6;
+    grid-column: 1/7;
     grid-row: 1/-1;
     background-size: contain;
     background-repeat: no-repeat;
@@ -69,7 +92,12 @@ const ProjectImg = styled.div.attrs({ className: "img" })`
 
     @media ${device.tablet} {
         background-position: 0 20%;
-    } ;
+    }
+
+    @media ${device.mobileL} {
+        height: 200px;
+        width: 100%;
+    }
 `;
 
 const ProjectInfo = styled.div.attrs({ className: "project-info" })`
@@ -84,19 +112,12 @@ const ProjectInfo = styled.div.attrs({ className: "project-info" })`
 
     & .title {
         place-self: center right;
+        margin-bottom: 10px;
         grid-row: 1/4;
         text-align: right;
         font-family: "Mali", sans-serif;
         color: white;
         font-size: ${({ theme }) => theme.headingMD};
-        @media ${device.laptop} {
-            font-size: ${({ theme }) => theme.headingSM};
-        }
-
-        @media ${device.tablet} {
-            font-size: ${({ theme }) => theme.headingSM};
-            grid-row: 1/2;
-        }
     }
 
     & .info {
@@ -112,21 +133,10 @@ const ProjectInfo = styled.div.attrs({ className: "project-info" })`
         color: ${({ theme }) => theme.textColor};
         min-width: 400px;
         background-color: ${({ theme }) => theme.navBackGround};
-        @media ${device.tablet} {
-            min-height: 100px;
-            max-width: 200px;
-            padding: 1rem 1rem;
-            grid-row: 3/6;
-        }
+
         & p {
             font-family: "Mali", sans-serif;
             font-size: ${({ theme }) => theme.textMD};
-            @media ${device.laptop} {
-                font-size: ${({ theme }) => theme.textSM};
-            }
-            @media ${device.tablet} {
-                font-size: ${({ theme }) => theme.textSM};
-            }
         }
         &:hover {
             box-shadow: 7px 8px 20px rgba(0, 0, 0, 0.5);
@@ -134,6 +144,7 @@ const ProjectInfo = styled.div.attrs({ className: "project-info" })`
     }
     & .tech,
     & .links {
+        margin-top: 10px;
         padding-left: 2rem;
         gap: 2rem;
         color: ${({ theme }) => theme.textColor};
@@ -152,14 +163,58 @@ const ProjectInfo = styled.div.attrs({ className: "project-info" })`
     & .links {
         grid-row: 11/12;
     }
+    @media ${device.laptop} {
+        & .title {
+            font-size: ${({ theme }) => theme.headingSM};
+        }
+
+        & .info {
+            & p {
+                font-size: ${({ theme }) => theme.textSM};
+            }
+        }
+    }
 
     @media ${device.tablet} {
         grid-column: 3/-1;
+
+        & .title {
+            font-size: ${({ theme }) => theme.headingSM};
+            grid-row: 1/2;
+        }
+
+        & .info {
+            min-height: 100px;
+            max-width: 200px;
+            padding: 1rem 1rem;
+            grid-row: 3/6;
+        }
+
         & .tech {
             grid-row: 7/8;
         }
         & .links {
             grid-row: 8/9;
+        }
+    }
+    @media ${device.mobileL} {
+        position: static;
+
+        & .title {
+            place-self: center;
+            text-align: center;
+            font-size: ${({ theme }) => theme.headingSM};
+        }
+
+        & .info {
+            width: 100%;
+            min-width: 100%;
+            text-align: left;
+        }
+        .tech,
+        .links {
+            padding: 0;
+            justify-content: center;
         }
     }
 `;

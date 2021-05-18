@@ -12,12 +12,14 @@ import {
 import b2b from "../../assets/projects/b2b.png";
 import tt from "../../assets/projects/tictactoe.png";
 import cb from "../../assets/projects/covbit.png";
+import SlideInWhenIn from "../../hoc/SlideInWhenIn";
+import useInViewAnimate from "../../hooks/useInViewAnimate";
 
 const WorkPage = () => {
     return (
         <Wrapper>
             <BottomBorder>
-                <BouncyText id={400} text="Experiments" />
+                <BouncyText id={400} text="Creations" />
             </BottomBorder>
             <Container>
                 <ProjectCard img={b2b} tech={["ReactJS", "Firebase"]} />
@@ -35,12 +37,36 @@ const WorkPage = () => {
 
 export default WorkPage;
 
+const projectCardVariants = {
+    hidden: {
+        opacity: 0,
+        y: "100px",
+    },
+    visible: {
+        opacity: 1,
+        y: "0",
+        transition: {
+            type: "tween",
+            ease: "easeInOut",
+            duration: 2,
+            delay: 0.8,
+        },
+    },
+};
+
 const ProjectCard: React.FC<{ img: string; tech: string[] }> = ({
     img,
     tech,
 }) => {
+    const { ref, controls } = useInViewAnimate("hidden", "visible");
+
     return (
-        <ProjectCardStyle>
+        <ProjectCardStyle
+            ref={ref}
+            variants={projectCardVariants}
+            initial="hidden"
+            animate={controls}
+        >
             <ProjectImg style={{ backgroundImage: `url(${b2b})` }}></ProjectImg>
             <ProjectInfo>
                 <h1 className="title">bitstobytes.in</h1>

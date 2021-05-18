@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import logo from "../../favicon.png";
-import { Nav, NavBrand, NavItem, NavItems } from "./Navbar.style";
+import {
+    Nav,
+    NavBrand,
+    NavItem,
+    NavItems,
+    ExtraItem,
+    ExtraItems,
+} from "./Navbar.style";
 
 import { handleNavClick } from "../../helpers/helpers";
 
@@ -33,23 +40,17 @@ const Navbar = () => {
                     );
                 })}
             </NavItems>
-            {/* <SocialItems>
-                <SocialItem>
-                    <i className="lab la-github"></i>
-                </SocialItem>
-                <SocialItem>
-                    <i className="lab la-twitter"></i>
-                </SocialItem>
-                <SocialItem>
-                    <i className="lab la-linkedin"></i>
-                </SocialItem>
-                <SocialItem>
-                    <i className="lab la-telegram"></i>
-                </SocialItem>
-                <SocialItem>
-                    <i className="lab la-instagram"></i>
-                </SocialItem>
-            </SocialItems> */}
+            <ExtraItems>
+                <ExtraItem>
+                    <i className="lab la-blogger"></i>
+                </ExtraItem>
+                <ExtraItem>
+                    <i className="las la-terminal"></i>
+                </ExtraItem>
+                <ExtraItem>
+                    <i className="las la-volume-up"></i>
+                </ExtraItem>
+            </ExtraItems>
         </Nav>
     );
 };

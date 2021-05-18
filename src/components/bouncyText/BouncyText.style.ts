@@ -18,8 +18,15 @@ const BouncyWord = styled.span.attrs({ className: "word" })`
         cursor: pointer;
         color: ${({ theme }) => theme.accentColor};
     }
+    @media ${device.laptopL} {
+        font-size: ${({ theme }) => theme.headingLG};
+    }
+
     @media ${device.laptop} {
         font-size: ${({ theme }) => theme.headingMD};
+    }
+    @media ${device.mobileL} {
+        font-size: ${({ theme }) => theme.headingSM};
     }
 `;
 

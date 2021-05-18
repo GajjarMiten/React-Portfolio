@@ -29,8 +29,12 @@ const GlobalStyle = createGlobalStyle`
          @media ${device.tablet}{
              transform:scale(1.5);
          }
+         @media ${device.mobileL}{
+             transform:scale(0.9);
+         }
      }
     
+
    
 `;
 
@@ -44,7 +48,7 @@ const theme = {
     navbarWidth: "80px",
     navbarWidthMD: "60px",
     headingColor: "white",
-    headingLG: "5rem",
+    headingLG: "4rem",
     headingMD: "3rem",
     headingSM: "2rem",
     textLG: "1.5rem",

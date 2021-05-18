@@ -23,12 +23,13 @@ const Email = styled.a.attrs({ href: "mailto:miten3377@gmail.com" })`
         top: 50%;
         transform: translateX(20px);
         content: "";
-        height: 4px;
+        height: 1px;
         width: 300px;
         border: solid 1px white;
     }
-    @media ${device.laptop} {
+    @media ${device.laptopL} {
         font-size: ${({ theme }) => "0.8rem"};
+        bottom: 180px;
     }
     @media ${device.tablet} {
         display: none;

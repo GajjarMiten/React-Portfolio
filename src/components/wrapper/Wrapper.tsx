@@ -11,6 +11,10 @@ const Wrapper = styled.section`
     @media ${device.tablet} {
         padding: 0 60px;
     }
+
+    @media ${device.mobileL} {
+        padding: 0 20px;
+    }
 `;
 
 export default Wrapper;

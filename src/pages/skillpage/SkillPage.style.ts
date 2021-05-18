@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../style/mediaQueries";
 import { column } from "../../style/utils";
 
 const Container = styled.div`
@@ -51,7 +52,10 @@ const ParallexItem = styled.p<{ x: Number; y: Number; size: Number }>`
     font-weight: bold;
     font-family: "Mali", sans-serif;
     color: ${({ theme }) => theme.accentColor};
-    font-size: ${({ size }) => `${size}rem`};
+
+    @media ${device.mobileL} {
+        font-size: ${({ size }) => `1.2rem`};
+    }
 `;
 
 const SkillItem = styled.img`
