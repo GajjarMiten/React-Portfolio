@@ -12,7 +12,7 @@ import {
 } from "./SkillPage.style";
 import SlideInWhenIn from "../../hoc/SlideInWhenIn";
 
-const SkillPage = () => {
+const SkillPage: React.VFC = () => {
     useEffect(() => {
         const wrapper = document.getElementById("parallex-wrapper")!;
         const parallex = document.getElementById("parallex") as HTMLDivElement;
@@ -32,7 +32,7 @@ const SkillPage = () => {
         ) as HTMLDivElement;
 
         container.addEventListener("scroll", () => {
-            let h = window.innerHeight / 2;
+            const h = window.innerHeight / 2;
             let y = parallex.getBoundingClientRect().top;
             y = 10 - (y - h) * 0.16;
             parallex.style.transform = `translate3d(0,${y}px,0)`;

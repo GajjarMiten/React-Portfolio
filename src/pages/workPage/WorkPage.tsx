@@ -12,10 +12,10 @@ import {
 import b2b from "../../assets/projects/b2b.png";
 import tt from "../../assets/projects/tictactoe.png";
 import cb from "../../assets/projects/covbit.png";
-import SlideInWhenIn from "../../hoc/SlideInWhenIn";
+
 import useInViewAnimate from "../../hooks/useInViewAnimate";
 
-const WorkPage = () => {
+const WorkPage: React.VFC = () => {
     return (
         <Wrapper>
             <BottomBorder>
@@ -67,7 +67,7 @@ const ProjectCard: React.FC<{ img: string; tech: string[] }> = ({
             initial="hidden"
             animate={controls}
         >
-            <ProjectImg style={{ backgroundImage: `url(${b2b})` }}></ProjectImg>
+            <ProjectImg style={{ backgroundImage: `url(${img})` }}></ProjectImg>
             <ProjectInfo>
                 <h1 className="title">bitstobytes.in</h1>
                 <div className="info">
