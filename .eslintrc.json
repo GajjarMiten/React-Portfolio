@@ -18,6 +18,8 @@
     },
     "plugins": ["react", "@typescript-eslint"],
     "rules": {
+        "@typescript-eslint/no-explicit-any": 0,
+        "no-empty-function": 0,
         "no-non-null-assertion": 0,
         "react/prop-types": 0,
         "no-console": "warn",

@@ -20,6 +20,7 @@ const Text = styled.p<{ asHeading?: boolean }>`
         font-size: ${({ theme, asHeading }) =>
             asHeading ? theme.headingSM : theme.textSM};
     }
+    
 `;
 
 const BottomBorder = styled.div.attrs({ className: "bottom-border" })<{

@@ -14,6 +14,7 @@ import tt from "../../assets/projects/tictactoe.png";
 import cb from "../../assets/projects/covbit.png";
 
 import useInViewAnimate from "../../hooks/useInViewAnimate";
+import CursorFocus from "../../hoc/CursorFocus";
 
 const WorkPage: React.VFC = () => {
     return (
@@ -39,17 +40,14 @@ export default WorkPage;
 
 const projectCardVariants = {
     hidden: {
-        opacity: 0,
-        y: "100px",
+        scale: 0.5,
     },
     visible: {
-        opacity: 1,
-        y: "0",
+        scale: 1,
         transition: {
-            type: "tween",
-            ease: "easeInOut",
-            duration: 2,
-            delay: 0.8,
+            type: "spring",
+            stiffness: 120,
+            damping: 25,
         },
     },
 };
@@ -70,26 +68,35 @@ const ProjectCard: React.FC<{ img: string; tech: string[] }> = ({
             <ProjectImg style={{ backgroundImage: `url(${img})` }}></ProjectImg>
             <ProjectInfo>
                 <h1 className="title">bitstobytes.in</h1>
-                <div className="info">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Ad consectetur, neque, sunt autem optio aliquid
-                        veritatis doloribus. Lorem ipsum, dolor sit amet
-                        consectetur adipisicing elit. Cumque doloribus, nam
-                    </p>
-                </div>
+                <CursorFocus>
+                    <div className="info">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Ad consectetur, neque, sunt autem optio
+                            aliquid veritatis doloribus. Lorem ipsum, dolor sit
+                            amet consectetur adipisicing elit. Cumque doloribus,
+                            nam
+                        </p>
+                    </div>
+                </CursorFocus>
                 <ul className="tech">
                     {tech.map((i, idx) => {
                         return (
-                            <li key={idx}>
-                                <p>{i}</p>
-                            </li>
+                            <div key={idx}>
+                                <li>
+                                    <p>{i}</p>
+                                </li>
+                            </div>
                         );
                     })}
                 </ul>
                 <ul className="links">
-                    <li>Github</li>
-                    <li>Web</li>
+                    <CursorFocus>
+                        <li>Github</li>
+                    </CursorFocus>
+                    <CursorFocus>
+                        <li>Web</li>
+                    </CursorFocus>
                 </ul>
             </ProjectInfo>
         </ProjectCardStyle>

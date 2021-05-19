@@ -14,10 +14,7 @@ const BouncyWord = styled.span.attrs({ className: "word" })`
     animation-duration: 1s;
     animation-direction: both;
     animation-fill-mode: forwards;
-    &:hover {
-        cursor: pointer;
-        color: ${({ theme }) => theme.accentColor};
-    }
+   
     @media ${device.laptopL} {
         font-size: ${({ theme }) => theme.headingLG};
     }
@@ -26,6 +23,12 @@ const BouncyWord = styled.span.attrs({ className: "word" })`
         font-size: ${({ theme }) => theme.headingMD};
     }
     @media ${device.mobileL} {
+        font-size: ${({ theme }) => theme.headingLG};
+    }
+    @media ${device.mobileM} {
+        font-size: ${({ theme }) => theme.headingMD};
+    }
+    @media ${device.mobileS} {
         font-size: ${({ theme }) => theme.headingSM};
     }
 `;

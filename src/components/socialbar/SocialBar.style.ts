@@ -79,7 +79,7 @@ const SocialBarWrapper = styled.div`
     }
 `;
 
-const SocialButton = styled.a<{ color: string }>`
+const SocialButton = styled.a.attrs({className:"focusable"})<{ color: string }>`
     z-index: 3;
     padding: 0 1rem;
     display: flex;

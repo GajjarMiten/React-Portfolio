@@ -40,6 +40,7 @@ const Navbar = () => {
                     );
                 })}
             </NavItems>
+
             <ExtraItems>
                 <ExtraItem>
                     <i className="lab la-blogger"></i>

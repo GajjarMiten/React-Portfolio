@@ -1,6 +1,6 @@
 import React from "react";
-import { GlobalStyle, theme } from "./style/global";
-import styled, { ThemeProvider } from "styled-components";
+import { GlobalStyle } from "./style/global";
+import styled from "styled-components";
 import Navbar from "./components/navbar/Navbar";
 import Base from "./components/base/Base";
 import EntryPage from "./pages/entrypage/EntryPage";
@@ -11,6 +11,8 @@ import WorkPage from "./pages/workPage/WorkPage";
 import ContactPage from "./pages/contactpage/ContactPage";
 import SocialBar from "./components/socialbar/SocialBar";
 import { device } from "./style/mediaQueries";
+import Cursor from "./components/cursor/Cursor";
+import Provider from "./provider/Provider";
 
 const AppWrapper = styled.main`
     height: 100vh;
@@ -32,8 +34,9 @@ const App: React.VFC = () => {
     return (
         <>
             <GlobalStyle />
-            <ThemeProvider theme={theme}>
+            <Provider>
                 <AppWrapper>
+                    <Cursor />
                     <Navbar />
                     <Base>
                         <EntryPage />
@@ -45,7 +48,7 @@ const App: React.VFC = () => {
                     <EmailLine />
                     <SocialBar />
                 </AppWrapper>
-            </ThemeProvider>
+            </Provider>
         </>
     );
 };

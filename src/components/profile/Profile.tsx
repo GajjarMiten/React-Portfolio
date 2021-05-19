@@ -4,6 +4,7 @@ import profile from "../../assets/me.jpg";
 import { device } from "../../style/mediaQueries";
 import { motion } from "framer-motion";
 import useInViewAnimate from "../../hooks/useInViewAnimate";
+import CursorFocus from "../../hoc/CursorFocus";
 
 const ProfileStyle = styled(motion.img).attrs({ id: "profile" })`
     place-self: center;
@@ -17,6 +18,15 @@ const ProfileStyle = styled(motion.img).attrs({ id: "profile" })`
     @media ${device.laptop} {
         max-width: 300px;
         max-height: 300px;
+    }
+    @media ${device.mobileL} {
+        max-width: 280px;
+        max-height: 280px;
+    }
+
+    @media ${device.mobileS} {
+        max-width: 230px;
+        max-height: 230px;
     }
 `;
 
@@ -36,19 +46,21 @@ const profileVariants = {
     },
 };
 
-const Profile = () => {
+const Profile: React.VFC = () => {
     const { ref, controls } = useInViewAnimate("hidden", "visible");
 
     return (
-        <ProfileStyle
-            src={profile}
-            loading="lazy"
-            alt="profile"
-            ref={ref}
-            variants={profileVariants}
-            initial="hidden"
-            animate={controls}
-        />
+        <CursorFocus>
+            <ProfileStyle
+                src={profile}
+                loading="lazy"
+                alt="profile"
+                ref={ref}
+                variants={profileVariants}
+                initial="hidden"
+                animate={controls}
+            />
+        </CursorFocus>
     );
 };
 

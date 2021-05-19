@@ -3,7 +3,8 @@ import { bounce, bounceIn } from "./animations";
 import { device } from "./mediaQueries";
 
 const GlobalStyle = createGlobalStyle`
-    *{
+    *{  
+        cursor: none;
         padding:0;
         margin:0;
         box-sizing:border-box;

@@ -28,7 +28,7 @@ const Email = styled.a.attrs({ href: "mailto:miten3377@gmail.com" })`
         border: solid 1px white;
     }
     @media ${device.laptopL} {
-        font-size: ${({ theme }) => "0.8rem"};
+        font-size: ${() => "0.8rem"};
         bottom: 180px;
     }
     @media ${device.tablet} {
@@ -36,7 +36,7 @@ const Email = styled.a.attrs({ href: "mailto:miten3377@gmail.com" })`
     }
 `;
 
-const EmailLine = () => {
+const EmailLine: React.FC = () => {
     return <Email>miten3377@gmail.com</Email>;
 };
 

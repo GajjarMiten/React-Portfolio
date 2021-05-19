@@ -96,7 +96,7 @@ const NavItem = styled.a`
             font-size: 1.6rem;
         }
         p {
-            font-size: ${({ theme }) => "0.8rem"};
+            font-size: ${() => "0.8rem"};
         }
     }
 

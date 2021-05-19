@@ -44,9 +44,9 @@ const animateTitle = (offset: number) => {
     }
     const container = document.getElementById("container")! as HTMLDivElement;
     container.addEventListener("scroll", (e) => {
-        const target = e.target as HTMLDivElement;
 
-        let pos = p.getBoundingClientRect().top;
+
+        const pos = p.getBoundingClientRect().top;
 
         if (pos < 700 && offset >= 200) {
             animate();

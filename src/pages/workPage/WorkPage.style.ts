@@ -4,7 +4,7 @@ import { device } from "../../style/mediaQueries";
 import { center } from "../../style/utils";
 
 const Container = styled.div`
-    margin-top: 6rem;
+    margin-top: 3rem;
     flex: 1;
     width: 100%;
     padding: 0 20px;
@@ -15,12 +15,13 @@ const Container = styled.div`
 
     @media ${device.laptopL} {
         padding: 0;
-        gap: 0;
+        gap: 5rem;
     }
     @media ${device.tablet} {
         padding: 0;
     }
     @media ${device.mobileL} {
+        gap: 1rem;
     }
 `;
 
@@ -29,7 +30,7 @@ const ProjectCardStyle = styled(motion.div)`
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: 1fr;
     width: 100%;
-    min-height: 500px;
+    min-height: 100%;
     max-height: 700px;
 
     &:nth-of-type(even) {
@@ -97,6 +98,7 @@ const ProjectImg = styled.div.attrs({ className: "img" })`
     @media ${device.mobileL} {
         height: 200px;
         width: 100%;
+        grid-column: 1/-1;
     }
 `;
 
@@ -151,6 +153,11 @@ const ProjectInfo = styled.div.attrs({ className: "project-info" })`
         list-style-type: none;
         display: flex;
         justify-content: flex-end;
+        & div {
+            height: 50px;
+            width: 100px;
+            ${center}
+        }
         & p {
             font-size: ${({ theme }) => theme.textSM};
             font-family: "Mali", sans-serif;
@@ -158,10 +165,10 @@ const ProjectInfo = styled.div.attrs({ className: "project-info" })`
     }
 
     & .tech {
-        grid-row: 10/11;
+        grid-row: 7/8;
     }
     & .links {
-        grid-row: 11/12;
+        grid-row: 8/9;
     }
     @media ${device.laptop} {
         & .title {
@@ -215,6 +222,12 @@ const ProjectInfo = styled.div.attrs({ className: "project-info" })`
         .links {
             padding: 0;
             justify-content: center;
+        }
+        .tech {
+            grid-row: 4/5;
+        }
+        .links {
+            grid-row: 5/6;
         }
     }
 `;
