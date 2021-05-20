@@ -11,6 +11,7 @@ import {
     InfoTextCard,
     MadeWithLine,
     SocialBar,
+    SocialIcon,
 } from "./ContactPage.style";
 
 const ContactPage: React.VFC = () => {
@@ -32,7 +33,23 @@ const ContactPage: React.VFC = () => {
                             or feel free to drop a message in the form!😃
                         </p>
                     </InfoTextCard>
-                    <SocialBar />
+                    <SocialBar>
+                        <SocialIcon href="https://codepen.io/Mi10/">
+                            <i className="lab la-codepen"></i>
+                        </SocialIcon>
+                        <SocialIcon href="https://github.com/GajjarMiten/">
+                            <i className="lab la-github"></i>
+                        </SocialIcon>
+                        <SocialIcon href="https://www.linkedin.com/in/mitengajjar/">
+                            <i className="lab la-linkedin"></i>
+                        </SocialIcon>
+                        <SocialIcon href="https://twitter.com/GajjarMiten/">
+                            <i className="lab la-twitter"></i>
+                        </SocialIcon>
+                        <SocialIcon href="https://www.instagram.com/_.mi10._/">
+                            <i className="lab la-instagram"></i>
+                        </SocialIcon>
+                    </SocialBar>
                     <MadeWithLine>
                         Made With ❤️ By <Sparkle>Miten Gajjar</Sparkle>
                     </MadeWithLine>

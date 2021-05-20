@@ -9,6 +9,9 @@ const SocialBarWrapper = styled.div`
     right: 0;
 `;
 
-const SocialButton = styled.a<{ color: string }>``;
+const SocialButton = styled.a<{ color: string }>`
+    height: 60px;
+    width: 60px;
+`;
 
 export { SocialBarWrapper, SocialButton };

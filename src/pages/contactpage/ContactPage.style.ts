@@ -11,6 +11,14 @@ const Container = styled.div`
     grid-template-rows: 100%;
     padding-top: 5rem;
     gap: 1rem;
+
+    @media ${device.mobileL} {
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr;
+        padding: 0 20px;
+        padding-top: 3rem;
+        gap: 5rem;
+    }
 `;
 
 const ContactInfo = styled.div`
@@ -47,15 +55,47 @@ const InfoTextCard = styled(motion.div)`
             font-size: ${({ theme }) => theme.textSM};
         }
     }
+
+    @media ${device.mobileL} {
+        padding: 1rem;
+    }
 `;
 
 const SocialBar = styled.div`
+    flex: 1;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `;
 
-const SocialIcon = styled.a``;
+const SocialIcon = styled.a.attrs({ target: "_blank" })`
+    padding: 10px;
+    i {
+        color: white;
+        font-size: ${({ theme }) => theme.headingLG};
+    }
+
+    &:hover {
+        i {
+            color: ${({ theme }) => theme.accentColor};
+        }
+    }
+
+    @media ${device.mobileL} {
+        i {
+            font-size: ${({ theme }) => theme.headingMD};
+        }
+    }
+    @media ${device.mobileS} {
+        i {
+            font-size: ${({ theme }) => theme.headingSM};
+        }
+    }
+`;
 
 const MadeWithLine = styled.p`
+    margin-bottom: 80px;
     text-align: center;
     color: ${({ theme }) => theme.textColor};
     font-family: ${({ theme }) => theme.fontText};
@@ -65,4 +105,11 @@ const MadeWithLine = styled.p`
     }
 `;
 
-export { Container, ContactInfo, InfoTextCard, SocialBar, MadeWithLine };
+export {
+    Container,
+    ContactInfo,
+    InfoTextCard,
+    SocialBar,
+    MadeWithLine,
+    SocialIcon,
+};

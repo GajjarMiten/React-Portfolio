@@ -11,13 +11,16 @@ const FormStyle = styled(motion.form).attrs({ className: "contact-form" })`
     }
 `;
 
+const FormField = styled(motion.div)`
+    ${column}
+`;
 const NameEmailContainer = styled(motion.div)`
     display: flex;
     gap: 1rem;
-`;
 
-const FormField = styled(motion.div)`
-    ${column}
+    @media ${device.mobileL} {
+        flex-direction: column;
+    }
 `;
 
 const FieldTitle = styled(motion.label)`
@@ -60,6 +63,12 @@ const Input = styled(motion.input)`
         &[type="submit"] {
             padding: 0.8rem;
             max-width: 150px;
+        }
+    }
+
+    @media ${device.mobileL} {
+        &[type="submit"] {
+            max-width: 100%;
         }
     }
 `;

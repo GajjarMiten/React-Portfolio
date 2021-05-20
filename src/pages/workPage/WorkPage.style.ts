@@ -100,6 +100,7 @@ const ProjectImg = styled.div.attrs({ className: "img" })`
         width: 100%;
         grid-column: 1/-1;
     }
+    
 `;
 
 const ProjectInfo = styled.div.attrs({ className: "project-info" })`
@@ -230,6 +231,13 @@ const ProjectInfo = styled.div.attrs({ className: "project-info" })`
             grid-row: 5/6;
         }
     }
+
+    @media ${device.mobileS}{
+        .info {
+            min-width: 100%;
+        }
+    }
+
 `;
 
 export { Container, ProjectCardStyle, ProjectImg, ProjectInfo };
