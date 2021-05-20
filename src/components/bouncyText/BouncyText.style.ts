@@ -19,7 +19,7 @@ const BouncyWord = styled.span.attrs({ className: "word" })`
         font-size: ${({ theme }) => theme.headingLG};
     }
 
-    @media ${device.laptop} {
+    @media ${device.tablet} {
         font-size: ${({ theme }) => theme.headingMD};
     }
     @media ${device.mobileL} {

@@ -130,14 +130,14 @@ const ProjectInfo = styled.div.attrs({ className: "project-info" })`
         min-height: 200px;
         box-shadow: 7px 8px 20px rgba(0, 0, 0, 0.14);
         ${center}
-        transition:all 0.3s linear;
+        transition:all 0.3s ease-in;
         border-radius: 5px;
         color: ${({ theme }) => theme.textColor};
         min-width: 400px;
         background-color: ${({ theme }) => theme.navBackGround};
 
         & p {
-            font-family: "Mali", sans-serif;
+            font-family: ${({ theme }) => theme.fontText};
             font-size: ${({ theme }) => theme.textMD};
         }
         &:hover {

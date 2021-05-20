@@ -47,7 +47,17 @@ const spark = keyframes`
         opacity:1;
     }
 `;
-
+const sparkle = keyframes`
+  0% {
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    transform: scale(1) rotate(90deg);
+  }
+  100% {
+    transform: scale(0) rotate(180deg);
+  }
+`;
 const wave = keyframes`
     0% {
       margin-left: 0;
@@ -66,4 +76,24 @@ const swell = keyframes`
     }
   `;
 
-export { bounce, bounceIn, spark, wave, swell };
+const growAndShrink = keyframes`
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+`;
+const spin = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+`;
+
+export { bounce, bounceIn, spark, wave, swell, sparkle, growAndShrink, spin };

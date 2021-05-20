@@ -4,7 +4,7 @@ import { device } from "./mediaQueries";
 
 const GlobalStyle = createGlobalStyle`
     *{  
-        cursor: none;
+        /* cursor: none; */
         padding:0;
         margin:0;
         box-sizing:border-box;
@@ -55,6 +55,8 @@ const theme = {
     textLG: "1.5rem",
     textMD: "1.3rem",
     textSM: "1rem",
+    fontText: "'Mali',sans-serif",
+    fontHeading: "'Fredoka One', cursive",
 };
 
 const colors = [

@@ -1,10 +1,68 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
-
+import { device } from "../../style/mediaQueries";
+import { center, column } from "../../style/utils";
 
 const Container = styled.div`
-    position: relative;
-    display: flex;
+    display: grid;
     flex: 1;
+    padding: 0 100px;
+    grid-template-columns: 0.9fr 1fr;
+    grid-template-rows: 100%;
+    padding-top: 5rem;
+    gap: 1rem;
 `;
 
-export { Container };
+const ContactInfo = styled.div`
+    height: 100%;
+    width: 100%;
+    ${column}
+    padding-right: 2rem;
+    @media ${device.laptopL} {
+        padding-right: 0;
+    }
+`;
+
+const InfoTextCard = styled(motion.div)`
+    min-height: 200px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 7px 8px 20px rgba(0, 0, 0, 0.14);
+    background-color: ${({ theme }) => theme.navBackGround};
+    transition: all 0.3s linear;
+    padding: 1rem 2rem;
+    ${center}
+    &:hover {
+        box-shadow: 7px 8px 20px rgba(0, 0, 0, 0.5);
+    }
+    & p {
+        font-family: ${({ theme }) => theme.fontText};
+        color: ${({ theme }) => theme.textColor};
+        font-size: ${({ theme }) => theme.textLG};
+    }
+
+    @media ${device.laptopL} {
+        min-height: 100px;
+        & p {
+            font-size: ${({ theme }) => theme.textSM};
+        }
+    }
+`;
+
+const SocialBar = styled.div`
+    width: 100%;
+`;
+
+const SocialIcon = styled.a``;
+
+const MadeWithLine = styled.p`
+    text-align: center;
+    color: ${({ theme }) => theme.textColor};
+    font-family: ${({ theme }) => theme.fontText};
+    font-size: ${({ theme }) => theme.textLG};
+    @media ${device.laptopL} {
+        font-size: ${({ theme }) => theme.textSM};
+    }
+`;
+
+export { Container, ContactInfo, InfoTextCard, SocialBar, MadeWithLine };

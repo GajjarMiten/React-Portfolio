@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import logo from "../../favicon.png";
+import React from "react";
+import logo from "../../assets/logo.png";
 import {
     Nav,
     NavBrand,
@@ -19,7 +19,7 @@ const navItems = [
     { icon: "las la-envelope", title: "CONTACT" },
 ];
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
     return (
         <Nav>
             <NavBrand>
@@ -32,7 +32,7 @@ const Navbar = () => {
                             className={idx === 0 ? "active" : ""}
                             key={idx}
                             id={idx.toString()}
-                            onClick={(e) => handleNavClick(idx, navItems)}
+                            onClick={() => handleNavClick(idx, navItems)}
                         >
                             <i className={`${item.icon}`}></i>
                             <p>{item.title}</p>

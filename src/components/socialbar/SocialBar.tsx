@@ -1,11 +1,14 @@
 import React from "react";
-import { SocialBarWrapper, SocialButton } from "./SocialBar.style";
+import { SocialBarWrapper } from "./SocialBar.style";
 
-const SocialBar = () => {
-    return (
-        <SocialBarWrapper>
-            <div>
-                <SocialButton color="#cd486b" href="#!">
+const SocialBar: React.VFC = () => {
+    return <SocialBarWrapper></SocialBarWrapper>;
+};
+
+export default SocialBar;
+
+/*
+ <SocialButton color="#cd486b" href="#!">
                     <i className="lab la-instagram la-3x" />
                     <span>Github</span>
                 </SocialButton>
@@ -25,9 +28,4 @@ const SocialBar = () => {
                     <i className="lab la-codepen la-3x" />
                     <span>Hello!</span>
                 </SocialButton>
-            </div>
-        </SocialBarWrapper>
-    );
-};
-
-export default SocialBar;
+                */

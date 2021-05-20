@@ -2,11 +2,17 @@ import React from "react";
 import styled from "styled-components";
 import { device } from "../../style/mediaQueries";
 
-const Email = styled.a.attrs({ href: "mailto:miten3377@gmail.com" })`
+const Email = styled.a.attrs({
+    href: "mailto:miten3377@gmail.com",
+    className: "focusable",
+})`
     text-decoration: none;
     color: white;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     position: fixed;
+    height: 50px;
+    padding: 0 1rem;
     bottom: 250px;
     right: -20px;
     transform: rotateZ(90deg);
@@ -17,11 +23,16 @@ const Email = styled.a.attrs({ href: "mailto:miten3377@gmail.com" })`
     &:hover {
         color: ${({ theme }) => theme.textColor};
         transform: rotateZ(90deg) translateX(-20px);
+        border: solid 2px white;
+        border-radius: 12px;
+        background-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0px 0px 10px 1px ${({ theme }) => theme.accentColor};
     }
     &::after {
         position: absolute;
         top: 50%;
-        transform: translateX(20px);
+        transform: translateX(50%);
+        /* transform: translateX(20px); */
         content: "";
         height: 1px;
         width: 300px;

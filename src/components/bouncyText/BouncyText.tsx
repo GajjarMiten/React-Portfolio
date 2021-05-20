@@ -11,7 +11,7 @@ const BouncyText: React.FC<{
 }> = ({ text, id = 0, index = -1 }) => {
     useEffect(() => {
         animateTitle(id);
-        return () => {};
+        // return () => {};
     }, []);
 
     return (
@@ -32,8 +32,8 @@ const BouncyText: React.FC<{
                             e.currentTarget.classList.add("bounce");
                         }}
                         onAnimationEnd={(e) => {
-                            if (e.animationName === "bounce") {
-                            }
+                            // if (e.animationName === "bounce") {
+                            // }
                             e.currentTarget.classList.remove("bounce");
                         }}
                         key={idx}

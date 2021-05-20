@@ -46,7 +46,6 @@ const App: React.VFC = () => {
                         <ContactPage />
                     </Base>
                     <EmailLine />
-                    <SocialBar />
                 </AppWrapper>
             </Provider>
         </>

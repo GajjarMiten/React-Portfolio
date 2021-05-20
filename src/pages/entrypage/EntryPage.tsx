@@ -1,5 +1,6 @@
 import React from "react";
 import BouncyText from "../../components/bouncyText/BouncyText";
+import Button from "../../components/button/Button";
 import Wrapper from "../../components/wrapper/Wrapper";
 import { Text } from "../../global/GlobalComponents";
 import SlideInWhenIn from "../../hoc/SlideInWhenIn";
@@ -15,6 +16,9 @@ const EntryPage: React.VFC = () => {
                     <Text asHeading>On a way to be creative.</Text>
                     <Text>I am self-taught, independent developer from</Text>
                     <Text>Gujarat, India.</Text>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <Button>Say Hello 🙋‍♂️</Button>
                 </SlideInWhenIn>
             </Container>
         </Wrapper>
