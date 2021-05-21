@@ -9,8 +9,7 @@ import SkillPage from "./pages/skillpage/SkillPage";
 import EmailLine from "./components/email/EmailLine";
 import WorkPage from "./pages/workPage/WorkPage";
 import ContactPage from "./pages/contactpage/ContactPage";
-import SocialBar from "./components/socialbar/SocialBar";
-import { device } from "./style/mediaQueries";
+import { device, size } from "./style/mediaQueries";
 import Cursor from "./components/cursor/Cursor";
 import Provider from "./provider/Provider";
 
@@ -20,7 +19,15 @@ const AppWrapper = styled.main`
     display: grid;
     background-color: ${({ theme }) => theme.primaryColor};
     grid-template-columns: ${({ theme }) => theme.navbarWidth} auto;
-
+    max-width: ${size.laptopL};
+    margin: 0 auto;
+    position: relative;
+    border-left: solid 2px white;
+    border-right: solid 2px white;
+    overflow: hidden;
+    @media ${device.laptopL} {
+        border: none;
+    }
     @media ${device.laptop} {
         grid-template-columns: ${({ theme }) => theme.navbarWidthMD} auto;
     }

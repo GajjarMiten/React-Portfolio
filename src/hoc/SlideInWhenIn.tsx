@@ -13,12 +13,13 @@ const slideInVariants = {
         transition: {
             type: "spring",
             duration: 0.8,
+            delay: 0.6,
             stiffness: 90,
         },
     },
 };
 
-const SlideInWhenIn = (props: any) => {
+const SlideInWhenIn: React.FC<{ delay: number }> = ({ children, delay }) => {
     const { ref, controls } = useInViewAnimate("hidden", "visible");
     return (
         <motion.div
@@ -27,8 +28,9 @@ const SlideInWhenIn = (props: any) => {
             animate={controls}
             className="slide-in-box"
             ref={ref}
+            transition={{ delay }}
         >
-            {props.children}
+            {children}
         </motion.div>
     );
 };

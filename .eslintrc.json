@@ -6,7 +6,8 @@
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "eslint-plugin-better-styled-components"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -23,6 +24,7 @@
         "no-non-null-assertion": 0,
         "react/prop-types": 0,
         "no-console": "warn",
-        "no-unused-vars": "warn"
+        "no-unused-vars": "warn",
+        "better-styled-components/sort-declarations-alphabetically": 2
     }
 }

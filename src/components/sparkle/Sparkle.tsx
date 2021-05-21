@@ -1,25 +1,18 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
-import { random, range } from "../../helpers/helpers";
+
+import { range } from "../../helpers/helpers";
 import usePrefersReducedMotion from "../../hooks/usePreferReduceMotion";
 import useRandomInterval from "../../hooks/useRandomInterver";
+import { generateSparkle } from "./Sparkle.helper";
+import {
+    ChildWrapper,
+    SparkleSvg,
+    SparkleWrapper,
+    Wrapper,
+} from "./Sparkle.style";
 
-const DEFAULT_COLOR = "#FFC700";
-const generateSparkle = (color: string) => {
-    const sparkle = {
-        id: String(random(10000, 99999)),
-        createdAt: Date.now(),
-        color,
-        size: random(10, 20),
-        style: {
-            top: random(0, 100) + "%",
-            left: random(0, 100) + "%",
-        },
-    };
-    return sparkle;
-};
 const Sparkles: React.FC<{ color?: string }> = ({
-    color = DEFAULT_COLOR,
+    color = "#FFC700",
     children,
     ...delegated
 }) => {
@@ -75,46 +68,5 @@ const Sparkle: React.FC<{
         </SparkleWrapper>
     );
 };
-const comeInOut = keyframes`
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0);
-  }
-`;
-const spin = keyframes`
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(180deg);
-  }
-`;
-const Wrapper = styled.span`
-    display: inline-block;
-    position: relative;
-`;
-const SparkleWrapper = styled.span`
-    position: absolute;
-    display: block;
-    @media (prefers-reduced-motion: no-preference) {
-        animation: ${comeInOut} 700ms forwards;
-    }
-`;
-const SparkleSvg = styled.svg`
-    display: block;
-    @media (prefers-reduced-motion: no-preference) {
-        animation: ${spin} 1000ms linear;
-    }
-`;
-const ChildWrapper = styled.strong`
-    position: relative;
-    z-index: 1;
-    color: ${({ theme }) => theme.accentColor};
-    font-family: ${({ theme }) => theme.fontText};
-`;
+
 export default Sparkles;

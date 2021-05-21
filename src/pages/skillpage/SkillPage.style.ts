@@ -44,7 +44,7 @@ const Parallex = styled.div.attrs({ id: "parallex" })`
     width: 100%;
 `;
 
-const ParallexItem = styled.p<{ x: Number; y: Number; size: Number }>`
+const ParallexItem = styled.p<{ x: number; y: number; size: number }>`
     position: absolute;
     top: ${({ y }) => `${y}%`};
     left: ${({ x }) => `${x}%`};
@@ -54,13 +54,29 @@ const ParallexItem = styled.p<{ x: Number; y: Number; size: Number }>`
     color: ${({ theme }) => theme.accentColor};
 
     @media ${device.mobileL} {
-        font-size: ${({ size }) => `1.2rem`};
+        font-size: ${() => `1.2rem`};
     }
 `;
 
 const SkillItem = styled.img`
     height: 150px;
     width: 150px;
+`;
+
+const SkillSVG = styled.svg`
+    height: 64px;
+    width: 64px;
+
+    transform: scale(2.34);
+    @media ${device.laptop} {
+        transform: scale(1.2);
+    }
+    @media ${device.tablet} {
+        transform: scale(1.5);
+    }
+    @media ${device.mobileL} {
+        transform: scale(0.9);
+    }
 `;
 
 export {
@@ -71,4 +87,5 @@ export {
     Parallex,
     ParallexItem,
     SkillItem,
+    SkillSVG,
 };

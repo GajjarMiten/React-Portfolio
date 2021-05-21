@@ -9,7 +9,7 @@ const Text = styled.p<{ asHeading?: boolean }>`
 
     @media ${device.laptopL} {
         font-size: ${({ theme, asHeading }) =>
-            asHeading ? theme.headingLG : theme.textSM};
+            asHeading ? theme.headingLG : theme.textLG};
     }
 
     @media ${device.laptop} {
@@ -20,7 +20,6 @@ const Text = styled.p<{ asHeading?: boolean }>`
         font-size: ${({ theme, asHeading }) =>
             asHeading ? theme.headingSM : theme.textSM};
     }
-    
 `;
 
 const BottomBorder = styled.div.attrs({ className: "bottom-border" })<{
@@ -29,7 +28,10 @@ const BottomBorder = styled.div.attrs({ className: "bottom-border" })<{
     margin: ${({ marginH }) => `0 ${marginH ? marginH : 0}px`};
     border-bottom: ${({ theme }) => `dashed 2px ${theme.accentColor}`};
     padding-bottom: 2rem;
-    @media ${device.mobileL} {
+    @media ${device.tablet} {
+        margin: ${({ marginH }) => `0 ${marginH ? 60 : 0}px`};
+    }
+     @media ${device.mobileL} {
         margin: ${({ marginH }) => `0 ${marginH ? 20 : 0}px`};
     }
 `;

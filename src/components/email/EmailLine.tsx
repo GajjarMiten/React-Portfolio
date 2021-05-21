@@ -10,7 +10,7 @@ const Email = styled.a.attrs({
     color: white;
     display: inline-flex;
     align-items: center;
-    position: fixed;
+    position: absolute;
     height: 50px;
     padding: 0 1rem;
     bottom: 250px;
@@ -31,7 +31,7 @@ const Email = styled.a.attrs({
     &::after {
         position: absolute;
         top: 50%;
-        transform: translateX(50%);
+        transform: translateX(70%);
         /* transform: translateX(20px); */
         content: "";
         height: 1px;
@@ -41,6 +41,9 @@ const Email = styled.a.attrs({
     @media ${device.laptopL} {
         font-size: ${() => "0.8rem"};
         bottom: 180px;
+        &::after {
+            transform: translateX(50%);
+        }
     }
     @media ${device.tablet} {
         display: none;

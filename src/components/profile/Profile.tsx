@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import profile from "../../assets/me.jpg";
 import { device } from "../../style/mediaQueries";

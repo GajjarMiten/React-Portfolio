@@ -12,12 +12,16 @@ const Container = styled.div`
     padding-top: 5rem;
     gap: 1rem;
 
-    @media ${device.mobileL} {
+    @media ${device.tablet} {
         grid-template-columns: 100%;
         grid-template-rows: 1fr 1fr;
-        padding: 0 20px;
+        padding: 0 60px;
         padding-top: 3rem;
         gap: 5rem;
+    }
+    @media ${device.mobileL} {
+        padding: 0 20px;
+        padding-top: 3rem;
     }
 `;
 
@@ -64,6 +68,7 @@ const InfoTextCard = styled(motion.div)`
 const SocialBar = styled.div`
     flex: 1;
     width: 100%;
+    max-height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -73,12 +78,18 @@ const SocialIcon = styled.a.attrs({ target: "_blank" })`
     padding: 10px;
     i {
         color: white;
-        font-size: ${({ theme }) => theme.headingLG};
+        font-size: ${({ theme }) => `calc(${theme.headingLG} + 20px)`};
     }
 
     &:hover {
         i {
             color: ${({ theme }) => theme.accentColor};
+        }
+    }
+
+    @media ${device.laptopL} {
+        i {
+            font-size: ${({ theme }) => theme.headingLG};
         }
     }
 

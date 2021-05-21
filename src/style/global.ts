@@ -11,6 +11,9 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
    
+    body{
+        background: #252627;
+    }
     ::-webkit-scrollbar {
         display: none; 
      }
@@ -21,21 +24,6 @@ const GlobalStyle = createGlobalStyle`
         animation-name: ${bounceIn};
         animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
      }
-
-     .skill-svg{
-         @media ${device.laptop}{
-             transform:scale(1.2);
-
-         }
-         @media ${device.tablet}{
-             transform:scale(1.5);
-         }
-         @media ${device.mobileL}{
-             transform:scale(0.9);
-         }
-     }
-    
-
    
 `;
 

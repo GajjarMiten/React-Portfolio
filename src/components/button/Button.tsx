@@ -6,6 +6,7 @@ const buttonVariants = {
         boxShadow: "none",
     },
     hover: {
+        // cursor: "pointer",
         boxShadow: "0px 0px 20px 1px #a770ef",
         backgroundColor: "rgba(255, 255, 255, 0.1)",
         transition: {
@@ -18,15 +19,16 @@ const buttonVariants = {
     },
 };
 
-const Button: React.FC = (props: any) => {
+const Button: React.FC<{ onClick: VoidFunction }> = ({ children, onClick }) => {
     return (
         <ButtonStyle
             variants={buttonVariants}
             initial="initial"
             whileHover="hover"
             whileTap="tap"
+            onClick={onClick}
         >
-            {props.children}
+            {children}
         </ButtonStyle>
     );
 };

@@ -1,11 +1,11 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { device } from "../../style/mediaQueries";
 import { center, column } from "../../style/utils";
 
-const Nav = styled.nav`
+const Nav = styled(motion.nav)`
     padding: 10px 0;
-    display: flex;
-    flex-direction: column;
+    ${column}
     align-items: center;
     justify-content: space-between;
     height: 100vh;
@@ -27,7 +27,7 @@ const Nav = styled.nav`
     }
 `;
 
-const NavBrand = styled.a.attrs({ href: "/" })`
+const NavBrand = styled(motion.a).attrs({ href: "/" })`
     text-decoration: none;
     height: 60px;
     width: 60px;
@@ -56,7 +56,7 @@ const NavBrand = styled.a.attrs({ href: "/" })`
     }
 `;
 
-const NavItem = styled.a`
+const NavItem = styled(motion.a)`
     ${center};
     text-decoration: none;
     color: ${({ theme }) => theme.iconColor};
@@ -73,10 +73,12 @@ const NavItem = styled.a`
         display: none;
     }
     &:hover {
+        cursor: pointer;
         i {
             display: none;
         }
         p {
+            text-shadow: 0px 0px 10px ${({ theme }) => theme.accentColor};
             color: ${({ theme }) => theme.accentColor};
             display: block;
         }
@@ -110,7 +112,7 @@ const NavItem = styled.a`
     }
 `;
 
-const NavItems = styled.ul`
+const NavItems = styled(motion.ul)`
     ${center};
     flex-direction: column;
     width: 100%;

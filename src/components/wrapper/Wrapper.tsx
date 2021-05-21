@@ -9,7 +9,7 @@ const Wrapper = styled.section`
     flex-direction: column;
     /* border: solid 2px white; */
     @media ${device.tablet} {
-        padding: 0 60px;
+        padding: 0 40px;
     }
 
     @media ${device.mobileL} {

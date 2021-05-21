@@ -5,9 +5,9 @@ from {
  transform: scale3d(1, 1, 1);
 }
 
-30% {
- transform: scale3d(1.25, 0.75, 1);
-}
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
 
 40% {
  transform: scale3d(0.75, 1.25, 1);
@@ -95,5 +95,26 @@ const spin = keyframes`
     transform: rotate(180deg);
   }
 `;
+const comeInOut = keyframes`
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+`;
 
-export { bounce, bounceIn, spark, wave, swell, sparkle, growAndShrink, spin };
+export {
+    bounce,
+    bounceIn,
+    spark,
+    wave,
+    swell,
+    sparkle,
+    growAndShrink,
+    spin,
+    comeInOut,
+};
