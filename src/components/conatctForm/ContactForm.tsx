@@ -1,4 +1,6 @@
+import { Variants } from "framer-motion";
 import React from "react";
+import useInViewAnimate from "../../hooks/useInViewAnimate";
 
 import {
     FormField,
@@ -26,9 +28,31 @@ const buttonVariants = {
     },
 };
 
+const fomrVariants: Variants = {
+    initial: {
+        opacity: 0,
+        y: "100%",
+    },
+    animate: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            type: "spring",
+            duration: 0.8,
+            stiffness: 90,
+        },
+    },
+};
+
 const ContactForm: React.FC = () => {
+    const { ref, controls } = useInViewAnimate("initial", "animate");
+
     return (
         <FormStyle
+            ref={ref}
+            variants={fomrVariants}
+            initial="inital"
+            animate={controls}
             onSubmit={(e) => {
                 e.preventDefault();
             }}

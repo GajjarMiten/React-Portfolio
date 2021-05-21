@@ -1,8 +1,8 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import useInViewAnimate from "../hooks/useInViewAnimate";
 
-const slideInVariants = {
+const slideInVariants: Variants = {
     hidden: {
         opacity: 0,
         y: "100%",
@@ -15,11 +15,12 @@ const slideInVariants = {
             duration: 0.8,
             delay: 0.6,
             stiffness: 90,
+            staggerChildren: 0.1,
         },
     },
 };
 
-const SlideInWhenIn: React.FC<{ delay: number }> = ({ children, delay }) => {
+const SlideInWhenIn: React.FC = ({ children }) => {
     const { ref, controls } = useInViewAnimate("hidden", "visible");
     return (
         <motion.div
@@ -28,7 +29,6 @@ const SlideInWhenIn: React.FC<{ delay: number }> = ({ children, delay }) => {
             animate={controls}
             className="slide-in-box"
             ref={ref}
-            transition={{ delay }}
         >
             {children}
         </motion.div>

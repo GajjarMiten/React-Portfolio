@@ -25,7 +25,7 @@ const Container = styled.div`
     }
 `;
 
-const ContactInfo = styled.div`
+const ContactInfo = styled(motion.div)`
     height: 100%;
     width: 100%;
     ${column}
@@ -65,16 +65,15 @@ const InfoTextCard = styled(motion.div)`
     }
 `;
 
-const SocialBar = styled.div`
-    flex: 1;
+const SocialBar = styled(motion.div)`
     width: 100%;
-    max-height: 200px;
+    min-height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
 `;
 
-const SocialIcon = styled.a.attrs({ target: "_blank" })`
+const SocialIcon = styled(motion.a).attrs({ target: "_blank" })`
     padding: 10px;
     i {
         color: white;
@@ -105,7 +104,7 @@ const SocialIcon = styled.a.attrs({ target: "_blank" })`
     }
 `;
 
-const MadeWithLine = styled.p`
+const MadeWithLine = styled(motion.p)`
     margin-bottom: 80px;
     text-align: center;
     color: ${({ theme }) => theme.textColor};

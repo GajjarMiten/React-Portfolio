@@ -6,7 +6,7 @@ import Base from "./components/base/Base";
 import EntryPage from "./pages/entrypage/EntryPage";
 import AboutPage from "./pages/aboutpage/AboutPage";
 import SkillPage from "./pages/skillpage/SkillPage";
-import EmailLine from "./components/email/EmailLine";
+import EmailLine from "./components/emailLine/EmailLine";
 import WorkPage from "./pages/workPage/WorkPage";
 import ContactPage from "./pages/contactpage/ContactPage";
 import { device, size } from "./style/mediaQueries";
