@@ -1,11 +1,13 @@
 import React from "react";
 import BouncyText from "../../components/bouncyText/BouncyText";
 import Button from "../../components/button/Button";
+import SoundDiv from "../../components/soundDiv/SoundDiv";
 import Wrapper from "../../components/wrapper/Wrapper";
 import { Text } from "../../global/GlobalComponents";
 import SlideInWhenIn from "../../hoc/SlideInWhenIn";
 import { Container } from "./EntryPage.style";
-import wave from "../../assets/wave.gif";
+
+import boop from "../../assets/sounds/boop.mp3";
 
 const EntryPage: React.VFC = () => {
     const handleClick = () => {
@@ -15,7 +17,7 @@ const EntryPage: React.VFC = () => {
     return (
         <Wrapper>
             <Container>
-                <SlideInWhenIn delay={1.4}>
+                <SlideInWhenIn>
                     <Text asHeading>Hi,</Text>
                     <BouncyText text="I'm&nbsp;Miten," id={100} index={4} />
                     <Text asHeading>On a way to be creative.</Text>
@@ -23,7 +25,9 @@ const EntryPage: React.VFC = () => {
                     <Text>Gujarat, India.</Text>
                     <p>&nbsp;</p>
                     <p>&nbsp;</p>
-                    <Button onClick={handleClick}>Say Hello 🙋‍♂️</Button>
+                    <SoundDiv soundProp={boop}>
+                        <Button onClick={handleClick}>Say Hello 🙋‍♂️</Button>
+                    </SoundDiv>
                 </SlideInWhenIn>
             </Container>
         </Wrapper>

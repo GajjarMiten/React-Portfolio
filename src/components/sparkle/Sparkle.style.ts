@@ -23,6 +23,13 @@ const ChildWrapper = styled.strong`
     z-index: 1;
     color: ${({ theme }) => theme.accentColor};
     font-family: ${({ theme }) => theme.fontText};
+
+    button & {
+        color: ${({ theme }) => "white"};
+    }
+    button:hover & {
+        color: ${({ theme }) => theme.textColor};
+    }
 `;
 
 export { Wrapper, ChildWrapper, SparkleSvg, SparkleWrapper };

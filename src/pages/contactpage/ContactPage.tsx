@@ -1,5 +1,12 @@
 import { Variants } from "framer-motion";
 import React from "react";
+import UseAnimations from "react-useanimations";
+import github from "react-useanimations/lib/github";
+import linkedin from "react-useanimations/lib/linkedin";
+import instagram from "react-useanimations/lib/instagram";
+import twitter from "react-useanimations/lib/twitter";
+import codepen from "react-useanimations/lib/codepen";
+import AnimatedIcon from "../../components/animatedIcon/AnimatedIcon";
 import BouncyText from "../../components/bouncyText/BouncyText";
 import ContactForm from "../../components/conatctForm/ContactForm";
 import InlineLink from "../../components/inlineLink/InlineLink";
@@ -35,11 +42,11 @@ export default ContactPage;
 
 const socialBarVariant: Variants = {
     initial: {
-        x: "100%",
+        y: 100,
         opacity: 0,
     },
     animate: {
-        x: 0,
+        y: 0,
         opacity: 1,
         transition: {
             type: "spring",
@@ -72,19 +79,19 @@ const ContactInfoContainer: React.VFC = () => {
             </InfoTextCard>
             <SocialBar variants={socialBarVariant}>
                 <SocialIcon href="https://codepen.io/Mi10/">
-                    <i className="lab la-codepen"></i>
+                    <AnimatedIcon animation={codepen} />
                 </SocialIcon>
                 <SocialIcon href="https://github.com/GajjarMiten/">
-                    <i className="lab la-github"></i>
+                    <AnimatedIcon animation={github} />
                 </SocialIcon>
                 <SocialIcon href="https://www.linkedin.com/in/mitengajjar/">
-                    <i className="lab la-linkedin"></i>
+                    <AnimatedIcon animation={linkedin} />
                 </SocialIcon>
                 <SocialIcon href="https://twitter.com/GajjarMiten/">
-                    <i className="lab la-twitter"></i>
+                    <AnimatedIcon animation={twitter} />
                 </SocialIcon>
                 <SocialIcon href="https://www.instagram.com/_.mi10._/">
-                    <i className="lab la-instagram"></i>
+                    <AnimatedIcon animation={instagram} loop={false} />
                 </SocialIcon>
             </SocialBar>
             <MadeWithLine variants={socialBarVariant}>

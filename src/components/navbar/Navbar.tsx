@@ -12,6 +12,10 @@ import {
 import { handleNavClick } from "./Navbar.helper";
 
 import { AnimatePresence, motion } from "framer-motion";
+import SoundDiv from "../soundDiv/SoundDiv";
+import AnimatedIcon from "../animatedIcon/AnimatedIcon";
+import volum from "react-useanimations/lib/volume";
+import { useSettings } from "../../provider/Settings.provider";
 
 const navItems = [
     { icon: "las la-home", title: "HOME" },
@@ -51,16 +55,20 @@ const Navbar: React.FC = () => {
                 >
                     {navItems.map((item, idx) => {
                         return (
-                            <NavItem
-                                className={idx === 0 ? "active" : ""}
-                                key={idx}
-                                id={idx.toString()}
-                                onClick={() => handleNavClick(idx, navItems)}
-                                variants={motionProps}
-                            >
-                                <i className={`${item.icon}`}></i>
-                                <p>{item.title}</p>
-                            </NavItem>
+                            <SoundDiv key={idx.toString()}>
+                                <NavItem
+                                    className={idx === 0 ? "active" : ""}
+                                    key={idx}
+                                    id={idx.toString()}
+                                    onClick={() =>
+                                        handleNavClick(idx, navItems)
+                                    }
+                                    variants={motionProps}
+                                >
+                                    <i className={`${item.icon}`}></i>
+                                    <p>{item.title}</p>
+                                </NavItem>
+                            </SoundDiv>
                         );
                     })}
                 </NavItems>
@@ -78,7 +86,7 @@ const Navbar: React.FC = () => {
                             <i className="las la-terminal"></i>
                         </ExtraItem>
                         <ExtraItem variants={motionProps}>
-                            <i className="las la-volume-up"></i>
+                            <SoundIcon />
                         </ExtraItem>
                     </ExtraItems>
                 </motion.div>
@@ -89,4 +97,17 @@ const Navbar: React.FC = () => {
 
 export default Navbar;
 
-const NavMobile = () => {};
+const SoundIcon: React.FC = () => {
+    const { value: sound, toggleSound } = useSettings();
+
+    return (
+        <AnimatedIcon
+            animation={volum}
+            loop={false}
+            size={30}
+            color="#838383"
+            reversed={!sound}
+            onClick={toggleSound}
+        />
+    );
+};

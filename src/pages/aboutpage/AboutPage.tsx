@@ -18,8 +18,8 @@ const AboutPage = () => {
                     <SlideInWhenIn>
                         <Text>
                             Hey Folks👋! I am <Sparkle>Miten Gajjar</Sparkle>. A
-                            20years old Software Engineer powered by coffee and
-                            VS Code and weeb who loves anime and gaming. I am
+                            20years old Software Engineer powered by VS Code and
+                            Coffee, also a weeb who loves anime and gaming. I am
                             new to community so I prefer to keep learning,
                             continue challenging myself, and do interesting
                             things. I am passionate about building excellent web

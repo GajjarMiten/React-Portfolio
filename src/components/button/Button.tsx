@@ -1,17 +1,20 @@
+import { Variants } from "framer-motion";
 import React from "react";
 import { ButtonStyle } from "./Button.style";
 
-const buttonVariants = {
+const buttonVariants: Variants = {
     initial: {
         boxShadow: "none",
     },
     hover: {
         // cursor: "pointer",
+
         boxShadow: "0px 0px 20px 1px #a770ef",
         backgroundColor: "rgba(255, 255, 255, 0.1)",
         transition: {
-            duration: 0.3,
-            yoyo: Infinity,
+            duration: 0.8,
+            repeat: Infinity,
+            repeatType: "mirror",
         },
     },
     tap: {

@@ -75,6 +75,7 @@ const SocialBar = styled(motion.div)`
 
 const SocialIcon = styled(motion.a).attrs({ target: "_blank" })`
     padding: 10px;
+
     i {
         color: white;
         font-size: ${({ theme }) => `calc(${theme.headingLG} + 20px)`};

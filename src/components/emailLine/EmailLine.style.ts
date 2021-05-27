@@ -15,10 +15,19 @@ const Email = styled(motion.a).attrs({
     padding: 0 1rem;
     bottom: 250px;
     right: -20px;
-    z-index: 10;
+    transform: rotateZ(90deg);
+    z-index: 100;
     font-size: 1.2rem;
     font-family: "Mali", sans-serif;
-    
+    transition: all 0.2s ease-in;
+    &:hover {
+        color: ${({ theme }) => theme.textColor};
+        transform: rotateZ(90deg) translateX(-20px);
+        border: solid 2px white;
+        border-radius: 12px;
+        background-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0px 0px 10px 1px ${({ theme }) => theme.accentColor};
+    }
     &::after {
         position: absolute;
         top: 50%;
