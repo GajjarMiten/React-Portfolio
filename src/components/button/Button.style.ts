@@ -6,6 +6,7 @@ const ButtonStyle = styled(motion.button).attrs({ className: "focusable" })`
     padding: 1.3rem;
     width: 300px;
     background: none;
+    position: relative;
     color: white;
     font-size: ${({ theme }) => theme.textLG};
     font-family: ${({ theme }) => theme.fontText};
@@ -19,6 +20,13 @@ const ButtonStyle = styled(motion.button).attrs({ className: "focusable" })`
         padding: 1rem;
         font-size: ${({ theme }) => theme.textSM};
         max-width: 200px;
+    }
+
+    svg {
+        position: absolute;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
     }
 `;
 

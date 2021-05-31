@@ -11,7 +11,6 @@ const BouncyText: React.FC<{
 }> = ({ text, id = 0, index = -1 }) => {
     useEffect(() => {
         animateTitle(id);
-        // return () => {};
     }, []);
 
     return (

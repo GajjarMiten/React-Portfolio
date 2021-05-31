@@ -9,12 +9,19 @@ import {
     ProjectInfo,
 } from "./WorkPage.style";
 
-import b2b from "../../assets/projects/b2b.png";
+import b2b from "../../assets/projects/b2b.jpg";
 import tt from "../../assets/projects/tictactoe.png";
 import cb from "../../assets/projects/covbit.png";
 
 import useInViewAnimate from "../../hooks/useInViewAnimate";
 import CursorFocus from "../../hoc/CursorFocus";
+import {
+    BottomLeftCorner,
+    BottomRightCorner,
+    TopLeftCorner,
+    TopRightCorner,
+} from "../../components/styledCard/StyledCard.style";
+import Sparkles from "../../components/sparkle/Sparkle";
 
 const WorkPage: React.VFC = () => {
     return (
@@ -23,14 +30,30 @@ const WorkPage: React.VFC = () => {
                 <BouncyText id={400} text="Creations" />
             </BottomBorder>
             <Container>
-                <ProjectCard img={b2b} tech={["ReactJS", "Firebase"]} />
+                <ProjectCard
+                    img={b2b}
+                    tech={["ReactJS", "Firebase"]}
+                    title="BitsToBytes.in"
+                    description={
+                        <p>
+                            A web for representing our programming club
+                            <Sparkles>&nbsp;BitsToBytes&nbsp;</Sparkles>
+                            at college level
+                        </p>
+                    }
+                />
                 <ProjectCard
                     img={cb}
                     tech={["Flutter", "Covid API", "Firebase"]}
+                    title="CovBit"
+                    description=""
                 />
-                <ProjectCard img={tt} tech={["Flutter"]} />
-                {/* <ProjectCard />
-                <ProjectCard /> */}
+                <ProjectCard
+                    img={tt}
+                    tech={["Flutter"]}
+                    title="TicTacToe"
+                    description=""
+                />
             </Container>
         </Wrapper>
     );
@@ -52,10 +75,12 @@ const projectCardVariants = {
     },
 };
 
-const ProjectCard: React.FC<{ img: string; tech: string[] }> = ({
-    img,
-    tech,
-}) => {
+const ProjectCard: React.FC<{
+    img: string;
+    tech: string[];
+    title: string;
+    description: any;
+}> = ({ img, tech, title, description }) => {
     const { ref, controls } = useInViewAnimate("hidden", "visible");
 
     return (
@@ -67,16 +92,14 @@ const ProjectCard: React.FC<{ img: string; tech: string[] }> = ({
         >
             <ProjectImg style={{ backgroundImage: `url(${img})` }}></ProjectImg>
             <ProjectInfo>
-                <h1 className="title">bitstobytes.in</h1>
+                <h1 className="title">{title}</h1>
                 <CursorFocus>
                     <div className="info">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Ad consectetur, neque, sunt autem optio
-                            aliquid veritatis doloribus. Lorem ipsum, dolor sit
-                            amet consectetur adipisicing elit. Cumque doloribus,
-                            nam
-                        </p>
+                        <TopLeftCorner />
+                        <TopRightCorner />
+                        <BottomLeftCorner />
+                        <BottomRightCorner />
+                        <p>{description}</p>
                     </div>
                 </CursorFocus>
                 <ul className="tech">

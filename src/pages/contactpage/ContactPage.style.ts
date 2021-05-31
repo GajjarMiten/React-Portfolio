@@ -9,7 +9,7 @@ const Container = styled.div`
     padding: 0 100px;
     grid-template-columns: 0.9fr 1fr;
     grid-template-rows: 100%;
-    padding-top: 5rem;
+    padding-top: 2rem;
     gap: 1rem;
 
     @media ${device.tablet} {
@@ -38,23 +38,24 @@ const ContactInfo = styled(motion.div)`
 const InfoTextCard = styled(motion.div)`
     min-height: 200px;
     width: 100%;
+    position: relative;
     border-radius: 12px;
     box-shadow: 7px 8px 20px rgba(0, 0, 0, 0.14);
     background-color: ${({ theme }) => theme.navBackGround};
     transition: all 0.3s linear;
-    padding: 1rem 2rem;
     ${center}
     &:hover {
         box-shadow: 7px 8px 20px rgba(0, 0, 0, 0.5);
     }
     & p {
+        padding: 10px 2rem;
         font-family: ${({ theme }) => theme.fontText};
         color: ${({ theme }) => theme.textColor};
         font-size: ${({ theme }) => theme.textLG};
     }
 
     @media ${device.laptopL} {
-        min-height: 100px;
+        min-height: 150px;
         & p {
             font-size: ${({ theme }) => theme.textSM};
         }

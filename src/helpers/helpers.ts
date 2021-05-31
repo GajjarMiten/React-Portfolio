@@ -1,4 +1,4 @@
-const animateTitle = (offset: number): void => {
+const animateTitle = (offset: number) => {
     const p = document.getElementById(offset.toString());
     const pos = p?.getBoundingClientRect().top;
     const animate = () => {
@@ -21,13 +21,16 @@ const animateTitle = (offset: number): void => {
         animate();
     }
     const container = document.getElementById("container") as HTMLDivElement;
-    container.addEventListener("scroll", () => {
+
+    const doAnimate = () => {
         const pos = p?.getBoundingClientRect().top;
 
         if (pos && pos < 700 && offset >= 200) {
             animate();
         }
-    });
+    };
+
+    container.addEventListener("scroll", doAnimate);
 };
 
 const random = (min: number, max: number): number =>

@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { bounce, bounceIn } from "./animations";
-import { device } from "./mediaQueries";
+
 
 const GlobalStyle = createGlobalStyle`
     *{  

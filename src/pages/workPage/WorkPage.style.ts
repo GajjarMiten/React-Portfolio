@@ -25,81 +25,13 @@ const Container = styled.div`
     }
 `;
 
-const ProjectCardStyle = styled(motion.div)`
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    grid-template-rows: 1fr;
-    width: 100%;
-    min-height: 100%;
-    max-height: 700px;
-
-    &:nth-of-type(even) {
-        .img {
-            grid-column: 5/-1;
-        }
-        .project-info {
-            grid-column: 1/6;
-            .title {
-                text-align: left;
-            }
-            .info {
-                place-self: center left;
-                text-align: left;
-            }
-            .tech,
-            .links {
-                justify-content: flex-start;
-            }
-        }
-    }
-    @media ${device.tablet} {
-        min-height: 300px;
-        max-height: 350px;
-        &:nth-of-type(even) {
-            .img {
-                grid-column: 5/-1;
-            }
-            .project-info {
-                grid-column: 1/8;
-            }
-        }
-    }
-    @media ${device.mobileL} {
-        max-height: 100%;
-        display: block;
-
-        .project-info {
-            .title {
-                text-align: center;
-            }
-            .info {
-                min-width: 100%;
-            }
-            .tech,
-            .links {
-                padding: 0;
-                justify-content: center;
-            }
-            &:nth-of-type(even) {
-                .title {
-                    text-align: center;
-                }
-                .tech,
-                .links {
-                    padding: 0;
-                    justify-content: center;
-                }
-            }
-        }
-    }
-`;
-
-const ProjectImg = styled.div.attrs({ className: "img" })`
+const ProjectImg = styled.div`
     grid-column: 1/7;
     grid-row: 1/-1;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 0 0%;
+    background-origin: border-box;
     z-index: 1;
 
     @media ${device.tablet} {
@@ -112,7 +44,7 @@ const ProjectImg = styled.div.attrs({ className: "img" })`
     }
 `;
 
-const ProjectInfo = styled.div.attrs({ className: "project-info" })`
+const ProjectInfo = styled.div`
     max-height: 500px;
     grid-column: 5/-1;
     position: relative;
@@ -128,18 +60,19 @@ const ProjectInfo = styled.div.attrs({ className: "project-info" })`
     }
 
     & .info {
-        padding: 0 2rem;
         text-align: right;
         min-height: 200px;
         box-shadow: 7px 8px 20px rgba(0, 0, 0, 0.14);
         ${center}
-        transition:all 0.3s ease-in;
+        position: relative;
+        transition: all 0.3s ease-in;
         border-radius: 5px;
         color: ${({ theme }) => theme.textColor};
         min-width: 400px;
         background-color: ${({ theme }) => theme.navBackGround};
 
         & p {
+            padding: 1rem 2.5rem;
             font-family: ${({ theme }) => theme.fontText};
             font-size: ${({ theme }) => theme.textMD};
         }
@@ -212,6 +145,75 @@ const ProjectInfo = styled.div.attrs({ className: "project-info" })`
         .info {
             min-width: 100%;
             max-width: 100%;
+        }
+    }
+`;
+
+const ProjectCardStyle = styled(motion.div)`
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: 1fr;
+    width: 100%;
+    min-height: 100%;
+    max-height: 700px;
+
+    &:nth-of-type(even) {
+        ${ProjectImg} {
+            grid-column: 4/-1;
+        }
+        ${ProjectInfo} {
+            grid-column: 1/6;
+            .title {
+                text-align: left;
+            }
+            .info {
+                place-self: center left;
+                text-align: left;
+            }
+            .tech,
+            .links {
+                justify-content: flex-start;
+            }
+        }
+    }
+    @media ${device.tablet} {
+        min-height: 300px;
+        max-height: 350px;
+        &:nth-of-type(even) {
+            ${ProjectImg} {
+                grid-column: 5/-1;
+            }
+            ${ProjectInfo} {
+                grid-column: 1/8;
+            }
+        }
+    }
+    @media ${device.mobileL} {
+        max-height: 100%;
+        display: block;
+
+        ${ProjectInfo} {
+            .title {
+                text-align: center;
+            }
+            .info {
+                min-width: 100%;
+            }
+            .tech,
+            .links {
+                padding: 0;
+                justify-content: center;
+            }
+            &:nth-of-type(even) {
+                .title {
+                    text-align: center;
+                }
+                .tech,
+                .links {
+                    padding: 0;
+                    justify-content: center;
+                }
+            }
         }
     }
 `;

@@ -6,7 +6,7 @@ import SettingsProvider from "./Settings.provider";
 const Provider: React.FC = (props: any) => {
     return (
         <SettingsProvider>
-            <ThemeProvider theme={theme}>{props.children}</ThemeProvider>;
+            <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
         </SettingsProvider>
     );
 };

@@ -5,7 +5,7 @@ import useInViewAnimate from "../hooks/useInViewAnimate";
 const slideInVariants: Variants = {
     hidden: {
         opacity: 0,
-        y: "100%",
+        y: "50%",
     },
     visible: {
         opacity: 1,

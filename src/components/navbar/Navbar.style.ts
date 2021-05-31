@@ -35,6 +35,20 @@ const NavBrand = styled(motion.a).attrs({ href: "/" })`
     & img {
         height: 100%;
         width: 100%;
+        @media ${device.laptopL} {
+            height: 55px;
+            width: 55px;
+        }
+
+        @media ${device.laptop} {
+            height: 50px;
+            width: 50px;
+        }
+
+        @media ${device.tablet} {
+            height: 40px;
+            width: 40px;
+        }
     }
     @media ${device.laptopL} {
         height: 55px;

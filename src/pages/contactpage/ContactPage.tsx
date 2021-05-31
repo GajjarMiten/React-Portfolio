@@ -13,8 +13,13 @@ import InlineLink from "../../components/inlineLink/InlineLink";
 import Sparkle from "../../components/sparkle/Sparkle";
 import Wrapper from "../../components/wrapper/Wrapper";
 import { BottomBorder } from "../../global/GlobalComponents";
-import SlideInWhenIn from "../../hoc/SlideInWhenIn";
 import useInViewAnimate from "../../hooks/useInViewAnimate";
+import {
+    BottomLeftCorner,
+    BottomRightCorner,
+    TopLeftCorner,
+    TopRightCorner,
+} from "../../components/styledCard/StyledCard.style";
 import {
     ContactInfo,
     Container,
@@ -51,7 +56,7 @@ const socialBarVariant: Variants = {
         transition: {
             type: "spring",
             stiffness: 90,
-            staggerChildren: 0.4,
+            staggerChildren: 0.1,
             when: "beforeChildren",
         },
     },
@@ -68,6 +73,10 @@ const ContactInfoContainer: React.VFC = () => {
             animate={controls}
         >
             <InfoTextCard variants={socialBarVariant}>
+                <TopLeftCorner />
+                <TopRightCorner />
+                <BottomLeftCorner />
+                <BottomRightCorner />
                 <p>
                     Have any question or want to talk with me ? You can easily
                     connect with me via email at

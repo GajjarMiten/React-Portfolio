@@ -9,6 +9,7 @@ import { Container } from "./EntryPage.style";
 
 import boop from "../../assets/sounds/boop.mp3";
 
+
 const EntryPage: React.VFC = () => {
     const handleClick = () => {
         document.getElementById("500")?.scrollIntoView({ behavior: "smooth" });
@@ -26,7 +27,7 @@ const EntryPage: React.VFC = () => {
                     <p>&nbsp;</p>
                     <p>&nbsp;</p>
                     <SoundDiv soundProp={boop}>
-                        <Button onClick={handleClick}>Say Hello 🙋‍♂️</Button>
+                        <Button onClick={handleClick}>Say Hello 👋</Button>
                     </SoundDiv>
                 </SlideInWhenIn>
             </Container>

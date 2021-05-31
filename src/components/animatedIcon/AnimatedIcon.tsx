@@ -1,8 +1,15 @@
 import React from "react";
 import UseAnimations from "react-useanimations";
 import styled from "styled-components";
+import { device } from "../../style/mediaQueries";
 
-const Icon = styled(UseAnimations)``;
+const Icon = styled(UseAnimations)`
+
+    @media ${device.mobileL}{
+        font-size: 30;
+    }
+
+`;
 
 const AnimatedIcon: React.FC<{
     animation: any;
@@ -10,7 +17,7 @@ const AnimatedIcon: React.FC<{
     size?: number;
     color?: string;
     reversed?: boolean;
-    onClick: any;
+    onClick?: any;
 }> = ({
     animation,
     loop = true,

@@ -11,7 +11,7 @@ import {
     NameEmailContainer,
 } from "./ContactForm.style";
 
-const buttonVariants = {
+const buttonVariants: Variants = {
     initial: {
         boxShadow: "none",
     },
@@ -19,8 +19,9 @@ const buttonVariants = {
         boxShadow: "0px 0px 20px 1px #a770ef",
         backgroundColor: "rgba(255, 255, 255, 0.1)",
         transition: {
-            duration: 0.3,
-            yoyo: Infinity,
+            duration: 0.8,
+            repeat: Infinity,
+            repeatType: "reverse",
         },
     },
     tap: {
@@ -31,7 +32,7 @@ const buttonVariants = {
 const fomrVariants: Variants = {
     initial: {
         opacity: 0,
-        y: "100%",
+        y: "40%",
     },
     animate: {
         opacity: 1,

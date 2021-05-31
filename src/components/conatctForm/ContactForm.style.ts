@@ -55,14 +55,14 @@ const Input = styled(motion.input)`
         border: solid 2px white;
         border-radius: 12px;
         padding: 1.3rem;
-        max-width: 250px;
+        width: 200px;
     }
 
     @media ${device.laptopL} {
         font-size: ${({ theme }) => theme.textMD};
         &[type="submit"] {
             padding: 0.8rem;
-            max-width: 150px;
+            width: 200px;
         }
     }
 
