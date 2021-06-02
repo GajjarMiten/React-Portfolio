@@ -1,6 +1,5 @@
 import { Variants } from "framer-motion";
 import React from "react";
-import UseAnimations from "react-useanimations";
 import github from "react-useanimations/lib/github";
 import linkedin from "react-useanimations/lib/linkedin";
 import instagram from "react-useanimations/lib/instagram";

@@ -11,8 +11,9 @@ import {
     Wrapper,
 } from "./Sparkle.style";
 
-const Sparkles: React.FC<{ color?: string }> = ({
+const Sparkles: React.FC<{ color?: string; textColor?: string }> = ({
     color = "#FFC700",
+    textColor,
     children,
     ...delegated
 }) => {
@@ -44,7 +45,7 @@ const Sparkles: React.FC<{ color?: string }> = ({
                     style={sparkle.style}
                 />
             ))}
-            <ChildWrapper>{children}</ChildWrapper>
+            <ChildWrapper style={{ color: textColor }}>{children}</ChildWrapper>
         </Wrapper>
     );
 };

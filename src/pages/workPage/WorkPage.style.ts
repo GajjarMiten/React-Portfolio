@@ -7,7 +7,6 @@ const Container = styled.div`
     margin-top: 3rem;
     flex: 1;
     width: 100%;
-    padding: 0 20px;
     display: grid;
     grid-template-columns: 1fr;
     gap: 10rem;
@@ -21,201 +20,147 @@ const Container = styled.div`
         padding: 0;
     }
     @media ${device.mobileL} {
-        gap: 1rem;
     }
 `;
 
-const ProjectImg = styled.div`
-    grid-column: 1/7;
-    grid-row: 1/-1;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 0 0%;
-    background-origin: border-box;
-    z-index: 1;
-
-    @media ${device.tablet} {
-    }
-    @media ${device.mobileL} {
-        background-position: 50% 0%;
-        height: 200px;
-        width: 100%;
-        grid-column: 1/-1;
-    }
-`;
-
-const ProjectInfo = styled.div`
-    max-height: 500px;
-    grid-column: 5/-1;
-    position: relative;
-    grid-row: 1/-1;
-    z-index: 2;
-
-    & .title {
-        margin-bottom: 10px;
-        text-align: right;
-        font-family: ${({ theme }) => theme.fontText};
-        color: white;
-        font-size: ${({ theme }) => theme.headingMD};
-    }
-
-    & .info {
-        text-align: right;
-        min-height: 200px;
-        box-shadow: 7px 8px 20px rgba(0, 0, 0, 0.14);
-        ${center}
-        position: relative;
-        transition: all 0.3s ease-in;
-        border-radius: 5px;
-        color: ${({ theme }) => theme.textColor};
-        min-width: 400px;
-        background-color: ${({ theme }) => theme.navBackGround};
-
-        & p {
-            padding: 1rem 2.5rem;
-            font-family: ${({ theme }) => theme.fontText};
-            font-size: ${({ theme }) => theme.textMD};
-        }
-        &:hover {
-            box-shadow: 7px 8px 20px rgba(0, 0, 0, 0.5);
-        }
-    }
-    & .tech,
-    & .links {
-        margin-top: 10px;
-
-        gap: 10px;
-        color: ${({ theme }) => theme.textColor};
-        list-style-type: none;
-        display: flex;
-        justify-content: flex-end;
-        & div {
-            height: 50px;
-            width: 100px;
-            ${center}
-        }
-        & p {
-            font-size: ${({ theme }) => theme.textSM};
-            font-family: ${({ theme }) => theme.fontText};
-        }
-    }
-
-    @media ${device.laptop} {
-        & .title {
-            font-size: ${({ theme }) => theme.headingSM};
-        }
-
-        & .info {
-            & p {
-                font-size: ${({ theme }) => theme.textSM};
-            }
-        }
-    }
-
-    @media ${device.tablet} {
-        & .title {
-            font-size: ${({ theme }) => theme.headingSM};
-        }
-
-        & .info {
-            min-height: 100px;
-            max-width: 200px;
-            padding: 1rem 1rem;
-        }
-    }
-    @media ${device.tablet} {
-        position: static;
-
-        & .title {
-            font-size: ${({ theme }) => theme.headingSM};
-        }
-
-        & .info {
-            width: 100%;
-            text-align: left;
-        }
-        .tech,
-        .links {
-            padding: 0;
-            justify-content: flex-end;
-        }
-    }
-
-    @media ${device.mobileS} {
-        .info {
-            min-width: 100%;
-            max-width: 100%;
-        }
-    }
-`;
-
-const ProjectCardStyle = styled(motion.div)`
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    grid-template-rows: 1fr;
+const ProjectImg = styled(motion.img)`
+    height: 100%;
     width: 100%;
-    min-height: 100%;
-    max-height: 700px;
 
-    &:nth-of-type(even) {
-        ${ProjectImg} {
-            grid-column: 4/-1;
-        }
-        ${ProjectInfo} {
-            grid-column: 1/6;
-            .title {
-                text-align: left;
-            }
-            .info {
-                place-self: center left;
-                text-align: left;
-            }
-            .tech,
-            .links {
-                justify-content: flex-start;
-            }
-        }
-    }
-    @media ${device.tablet} {
-        min-height: 300px;
-        max-height: 350px;
-        &:nth-of-type(even) {
-            ${ProjectImg} {
-                grid-column: 5/-1;
-            }
-            ${ProjectInfo} {
-                grid-column: 1/8;
-            }
-        }
-    }
+    object-fit: fill;
+    position: absolute;
+    top: 0;
+    left: 0;
+
     @media ${device.mobileL} {
-        max-height: 100%;
-        display: block;
-
-        ${ProjectInfo} {
-            .title {
-                text-align: center;
-            }
-            .info {
-                min-width: 100%;
-            }
-            .tech,
-            .links {
-                padding: 0;
-                justify-content: center;
-            }
-            &:nth-of-type(even) {
-                .title {
-                    text-align: center;
-                }
-                .tech,
-                .links {
-                    padding: 0;
-                    justify-content: center;
-                }
-            }
-        }
+        height: fit-content;
+        position: static;
+        object-fit: contain;
     }
 `;
 
-export { Container, ProjectCardStyle, ProjectImg, ProjectInfo };
+const ProjectDispcription = styled(motion.p)`
+    padding: 1rem 0;
+    text-align: center;
+    max-width: 70%;
+    font-family: ${({ theme }) => theme.fontText};
+    color: ${({ theme }) => theme.textColor};
+    @media ${device.tablet} {
+        max-width: 90%;
+    }
+`;
+
+const TechStack = styled(motion.div)`
+    display: flex;
+    margin: 0.5rem 0;
+    gap: 2rem;
+    p {
+        text-transform: uppercase;
+        /* font-size: ${({ theme }) => theme.headingSM}; */
+        font-family: ${({ theme }) => theme.fontText};
+        color: ${({ theme }) => theme.textColor};
+    }
+`;
+
+const Links = styled(TechStack)`
+    width: 50%;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: dotted 2px white;
+    display: flex;
+    justify-content: center;
+`;
+
+const LinkButton = styled(motion.a).attrs({ className: "focusable" })`
+    text-decoration: none;
+    ${center}
+    padding: 5px 0;
+    height: 50px;
+    width: 70px;
+    border-radius: 10px;
+    transition: all 0.8s ease-out;
+    &:hover {
+        border: Solid 2px white;
+    }
+`;
+
+const ProjectDetails = styled(motion.div)`
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+const ProjectInfo = styled(motion.div)`
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    @media ${device.mobileL} {
+        flex: 1;
+        height: 100%;
+        position: static;
+        backdrop-filter: none;
+        background: none;
+        gap: 0;
+    }
+`;
+
+const ProjectTitle = styled(motion.h2)`
+    padding-top: 25px;
+    height: 60px;
+    width: 100%;
+    text-align: center;
+    font-size: ${({ theme }) => theme.headingSM};
+    color: white;
+    font-family: ${({ theme }) => theme.fontText};
+
+    @media ${device.mobileL} {
+        padding-top: 25px;
+        height: 60px;
+        font-size: ${({ theme }) => theme.textLG};
+    }
+`;
+
+const ProjectCardWrapper = styled(motion.div)`
+    place-self: center;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    border: solid 4px ${({ theme }) => theme.accentColor};
+    box-shadow: 7px 8px 20px rgba(0, 0, 0, 0.7);
+    width: 100%;
+    max-height: 400px;
+    max-width: 800px;
+    background: ${({ theme }) => theme.primaryColor};
+    position: relative;
+    cursor: pointer;
+
+    @media ${device.mobileL} {
+        border-width: 3px;
+        max-height: fit-content;
+        max-width: 100%;
+        position: static;
+        display: flex;
+        flex-direction: column;
+        pointer-events: none;
+    }
+`;
+
+export {
+    Container,
+    ProjectCardWrapper,
+    ProjectImg,
+    ProjectInfo,
+    ProjectTitle,
+    ProjectDispcription,
+    TechStack,
+    Links,
+    LinkButton,
+    ProjectDetails,
+};

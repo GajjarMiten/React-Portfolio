@@ -118,7 +118,7 @@ const NavItem = styled(motion.a)`
 
     @media ${device.tablet} {
         i {
-            font-size: 1.6rem;
+            font-size: 2.3rem;
         }
         p {
             font-size: ${({ theme }) => theme.textSM};
@@ -144,7 +144,7 @@ const NavItems = styled(motion.ul)`
     }
 
     @media ${device.mobileL} {
-        justify-content: center;
+        justify-content: space-around;
         flex: 1;
     }
 `;

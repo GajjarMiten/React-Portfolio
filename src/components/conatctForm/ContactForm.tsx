@@ -61,7 +61,7 @@ const ContactForm: React.FC = () => {
             <NameEmailContainer>
                 <FormField>
                     <FieldTitle htmlFor="name">I am</FieldTitle>
-                    <Input id="name" name="name" placeholder="NAME" />
+                    <Input id="name" name="name" placeholder="Awesome" />
                 </FormField>
                 <FormField>
                     <FieldTitle htmlFor="email">My Email is</FieldTitle>

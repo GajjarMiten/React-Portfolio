@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import profile from "../../assets/me.jpg";
+
 import { device } from "../../style/mediaQueries";
 import { motion } from "framer-motion";
 import useInViewAnimate from "../../hooks/useInViewAnimate";
@@ -52,7 +52,7 @@ const Profile: React.VFC = () => {
     return (
         <CursorFocus>
             <ProfileStyle
-                src={profile}
+                src="https://firebasestorage.googleapis.com/v0/b/myportfolio2692.appspot.com/o/projects%2Fme.jpg?alt=media&token=89b96c1b-1890-491b-ab6b-c9374cfb72b8"
                 loading="lazy"
                 alt="profile"
                 ref={ref}
