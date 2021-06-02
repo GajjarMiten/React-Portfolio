@@ -109,6 +109,7 @@ const ProjectCard: React.FC<{
                         variants={projectImgVariant}
                         initial="initial"
                         animate={controls}
+                        alt="project-img"
                     />
 
                     <ProjectInfo

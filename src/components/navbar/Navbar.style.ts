@@ -25,6 +25,9 @@ const Nav = styled(motion.nav)`
     @media ${device.mobileL} {
         padding: 0 20px;
     }
+    li {
+        list-style: none;
+    }
 `;
 
 const NavBrand = styled(motion.a).attrs({ href: "/" })`

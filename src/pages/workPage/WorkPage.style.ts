@@ -71,7 +71,10 @@ const Links = styled(TechStack)`
     justify-content: center;
 `;
 
-const LinkButton = styled(motion.a).attrs({ className: "focusable" })`
+const LinkButton = styled(motion.a).attrs({
+    className: "focusable",
+    rel: "noreferrer",
+})`
     text-decoration: none;
     ${center}
     padding: 5px 0;

@@ -55,20 +55,21 @@ const Navbar: React.FC = () => {
                 >
                     {navItems.map((item, idx) => {
                         return (
-                            <SoundDiv key={idx.toString()}>
-                                <NavItem
-                                    className={idx === 0 ? "active" : ""}
-                                    key={idx}
-                                    id={idx.toString()}
-                                    onClick={() =>
-                                        handleNavClick(idx, navItems)
-                                    }
-                                    variants={motionProps}
-                                >
-                                    <i className={`${item.icon}`}></i>
-                                    <p>{item.title}</p>
-                                </NavItem>
-                            </SoundDiv>
+                            <li key={idx.toString()}>
+                                <SoundDiv>
+                                    <NavItem
+                                        className={idx === 0 ? "active" : ""}
+                                        id={idx.toString()}
+                                        onClick={() =>
+                                            handleNavClick(idx, navItems)
+                                        }
+                                        variants={motionProps}
+                                    >
+                                        <i className={`${item.icon}`}></i>
+                                        <p>{item.title}</p>
+                                    </NavItem>
+                                </SoundDiv>
+                            </li>
                         );
                     })}
                 </NavItems>
@@ -79,15 +80,21 @@ const Navbar: React.FC = () => {
                     animate="animate"
                 >
                     <ExtraItems>
-                        <ExtraItem variants={motionProps}>
-                            <i className="lab la-blogger"></i>
-                        </ExtraItem>
-                        <ExtraItem variants={motionProps}>
-                            <i className="las la-terminal"></i>
-                        </ExtraItem>
-                        <ExtraItem variants={motionProps}>
-                            <SoundIcon />
-                        </ExtraItem>
+                        <li>
+                            <ExtraItem as={motion.div} variants={motionProps}>
+                                <i className="lab la-blogger"></i>
+                            </ExtraItem>
+                        </li>
+                        <li>
+                            <ExtraItem as={motion.div} variants={motionProps}>
+                                <i className="las la-terminal"></i>
+                            </ExtraItem>
+                        </li>
+                        <li>
+                            <ExtraItem as={motion.div} variants={motionProps}>
+                                <SoundIcon />
+                            </ExtraItem>
+                        </li>
                     </ExtraItems>
                 </motion.div>
             </Nav>

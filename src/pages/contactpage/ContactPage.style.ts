@@ -74,7 +74,10 @@ const SocialBar = styled(motion.div)`
     justify-content: center;
 `;
 
-const SocialIcon = styled(motion.a).attrs({ target: "_blank" })`
+const SocialIcon = styled(motion.a).attrs({
+    target: "_blank",
+    rel: "noreferrer",
+})`
     padding: 10px;
 
     i {

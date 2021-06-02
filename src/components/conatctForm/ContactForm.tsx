@@ -65,14 +65,14 @@ const ContactForm: React.FC = () => {
                 </FormField>
                 <FormField>
                     <FieldTitle htmlFor="email">My Email is</FieldTitle>
-                    <Input id="name" name="name" placeholder="You@Top.com" />
+                    <Input id="email" name="email" placeholder="You@Top.com" />
                 </FormField>
             </NameEmailContainer>
             <FormField>
-                <FieldTitle htmlFor="email">Let&apos;s Talk on</FieldTitle>
+                <FieldTitle htmlFor="message">Let&apos;s Talk on</FieldTitle>
                 <InputArea
-                    id="name"
-                    name="name"
+                    id="message"
+                    name="message"
                     placeholder="Something Creative..."
                 />
             </FormField>
