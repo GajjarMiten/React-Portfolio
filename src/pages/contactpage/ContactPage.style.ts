@@ -68,10 +68,11 @@ const InfoTextCard = styled(motion.div)`
 
 const SocialBar = styled(motion.div)`
     width: 100%;
-    min-height: 200px;
+    min-height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 `;
 
 const SocialIcon = styled(motion.a).attrs({

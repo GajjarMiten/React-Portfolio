@@ -9,13 +9,14 @@ const Wrapper = styled.div.attrs({ id: "container" })`
     height: 100%;
     width: 100%;
     overflow: scroll;
-
     display: flex;
     flex-direction: column;
-    gap: 13rem;
+    gap: 6rem;
     @media ${device.tablet} {
         gap: 3rem;
     }
+    scroll-padding-block-start: 2rem;
+    
 `;
 
 const Base: React.FC = ({ children }) => {

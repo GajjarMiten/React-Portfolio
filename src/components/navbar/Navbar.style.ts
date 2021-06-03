@@ -1,19 +1,22 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import { device } from "../../style/mediaQueries";
+import { device, size } from "../../style/mediaQueries";
 import { center, column } from "../../style/utils";
 
-const Nav = styled(motion.nav)`
-    padding: 10px 0;
-    ${column}
+const Nav = styled(motion.nav).attrs({ id: "navbar" })`
+    padding: 0px 40px;
+    display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 100vh;
-    width: ${({ theme }) => theme.navbarWidth};
-    background: ${({ theme }) => theme.navBackGround};
-
+    /* justify-content: space-between; */
+    max-width: ${size.laptopL};
+    width: 100%;
+    height: ${({ theme }) => theme.navbarWidth};
+    background: rgba(24, 24, 24, 0.8);
+    transition: all 0.3s ease-out;
+    backdrop-filter: blur(5px);
+    z-index: 19;
     @media ${device.laptopL} {
-        width: ${({ theme }) => theme.navbarWidthMD};
+        /* width: ${({ theme }) => theme.navbarWidthMD}; */
     }
     @media ${device.tablet} {
         padding: 0 20px;
@@ -21,13 +24,14 @@ const Nav = styled(motion.nav)`
         height: ${({ theme }) => theme.navbarWidth};
         flex-direction: row;
     }
-
+    box-shadow: 7px 8px 20px rgba(0, 0, 0, 0.4);
     @media ${device.mobileL} {
         padding: 0 20px;
     }
     li {
         list-style: none;
     }
+    border-bottom: solid 2px ${({ theme }) => theme.accentColor};
 `;
 
 const NavBrand = styled(motion.a).attrs({ href: "/" })`
@@ -36,8 +40,8 @@ const NavBrand = styled(motion.a).attrs({ href: "/" })`
     width: 60px;
     border-radius: 50%;
     & img {
-        height: 100%;
-        width: 100%;
+        height: 60px;
+        width: 60px;
         @media ${device.laptopL} {
             height: 55px;
             width: 55px;
@@ -78,16 +82,17 @@ const NavItem = styled(motion.a)`
     text-decoration: none;
     color: ${({ theme }) => theme.iconColor};
     height: 40px;
-    width: 100%;
-    &.active {
+    width: 100px;
+    /* &.active {
         color: ${({ theme }) => theme.accentColor};
-    }
+    } */
     i {
         font-size: 2.6rem;
+        display: none;
     }
     p {
-        font-size: 1rem;
-        display: none;
+        font-family: ${({ theme }) => theme.fontText};
+        font-size: ${({ theme }) => theme.textMD};
     }
     &:hover {
         cursor: pointer;
@@ -95,7 +100,7 @@ const NavItem = styled(motion.a)`
             display: none;
         }
         p {
-            text-shadow: 0px 0px 10px ${({ theme }) => theme.accentColor};
+            text-shadow: 0px 0px 5px ${({ theme }) => theme.accentColor};
             color: ${({ theme }) => theme.accentColor};
             display: block;
         }
@@ -106,7 +111,7 @@ const NavItem = styled(motion.a)`
             font-size: 2rem;
         }
         p {
-            font-size: ${({ theme }) => theme.textSM};
+            font-size: ${({ theme }) => theme.textMD};
         }
     }
 
@@ -115,7 +120,7 @@ const NavItem = styled(motion.a)`
             font-size: 1.6rem;
         }
         p {
-            font-size: ${() => "0.8rem"};
+            font-size: ${() => "1rem"};
         }
     }
 
@@ -125,36 +130,50 @@ const NavItem = styled(motion.a)`
         }
         p {
             font-size: ${({ theme }) => theme.textSM};
+            font-family: ${({ theme }) => theme.fontText};
+        }
+    }
+    @media ${device.mobileL} {
+        width: 100%;
+        i {
+            font-size: 2rem;
+            display: block;
+        }
+        p {
+            display: none;
+            font-size: ${({ theme }) => theme.textSM};
+            font-family: ${({ theme }) => theme.fontText};
         }
     }
 `;
 
 const NavItems = styled(motion.ul)`
     ${center};
-    flex-direction: column;
+    display: flex;
+    /* justify-content: flex-end; */
+    /* flex-direction: column; */
+
     width: 100%;
-    gap: 2rem;
-    flex: 1;
+    flex: 2;
 
     @media ${device.laptopL} {
         gap: 8px;
     }
 
     @media ${device.tablet} {
-        flex-direction: row;
-        justify-content: flex-end;
-        flex: 0;
+        justify-content: center;
     }
 
     @media ${device.mobileL} {
         justify-content: space-around;
-        flex: 1;
+        gap: 0;
     }
 `;
 
 const ExtraItems = styled(NavItems)`
     max-height: 150px;
     gap: 8px;
+    flex: 0;
 
     @media ${device.laptopL} {
         max-height: 130px;
@@ -166,6 +185,10 @@ const ExtraItems = styled(NavItems)`
 `;
 
 const ExtraItem = styled(NavItem)`
+    width: 100%;
+    i {
+        display: block;
+    }
     &:hover {
         i {
             display: block;

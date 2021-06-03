@@ -1,29 +1,30 @@
 import styled from "styled-components";
 import { device } from "../../style/mediaQueries";
 
+const Wrapper = styled.div`
+    min-width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 60px;
+`;
+
 const Container = styled.div`
+    padding: 0 100px;
     display: flex;
     justify-content: center;
-    height: 100vh;
     min-height: 400px;
     min-width: 500px;
     position: relative;
     flex-direction: column;
+
+    @media ${device.tablet} {
+        padding: 0 40px;
+    }
+
     @media ${device.mobileL} {
+        padding: 0 20px;
         min-width: 100%;
     }
 `;
 
-const Blur = styled.div`
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    border-radius: 10px;
-    left: 0;
-    background: rgba(255, 255, 255, 0.1);
-    z-index: 2;
-    /* filter: blur(px); */
-`;
-
-export { Container, Blur };
+export { Container, Wrapper };

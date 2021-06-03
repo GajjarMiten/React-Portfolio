@@ -16,11 +16,7 @@ import {
     TechStack,
 } from "./WorkPage.style";
 
-import {
-    AnimatePresence,
-    AnimateSharedLayout,
-    useAnimation,
-} from "framer-motion";
+import { AnimatePresence, useAnimation } from "framer-motion";
 
 import {
     projectDetailsVariants,
@@ -49,15 +45,18 @@ const WorkPage: React.VFC = () => {
                         "https://github.com/Bits-to-Bytes/Bits-to-Bytes-React",
                         "https://bitstobytes.in",
                     ]}
+                    key="1"
                 />
                 <ProjectCard
+                    key="2"
                     img="https://firebasestorage.googleapis.com/v0/b/myportfolio2692.appspot.com/o/projects%2Fptf2.png?alt=media&token=39947c38-4fbe-469b-9e8d-119300b0bcf1"
                     title="Portfolio V1.0"
-                    description="A responsive portfolio website built using Flutter web for showcasing my profile and uses Firebase for hostig"
+                    description="A responsive portfolio website built using Flutter web for showcasing my profile and uses Firebase for hosting"
                     tech={["Flutter", "Firebase"]}
                     links={["https://github.com/GajjarMiten/Flutter-Portfolio"]}
                 />
                 <ProjectCard
+                    key="3"
                     img={
                         "https://firebasestorage.googleapis.com/v0/b/myportfolio2692.appspot.com/o/projects%2Fcovbit.png?alt=media&token=76703fea-d491-46a2-8f36-dc820ae36540"
                     }
@@ -67,6 +66,7 @@ const WorkPage: React.VFC = () => {
                     links={["https://github.com/GajjarMiten/CovBit"]}
                 />
                 <ProjectCard
+                    key="4"
                     img="https://firebasestorage.googleapis.com/v0/b/myportfolio2692.appspot.com/o/projects%2Ftictactoe.png?alt=media&token=9fdd8825-4d02-484c-9f4f-89f136ccadf1"
                     title="TicTacToe"
                     description="A multiplayer TicTacToe game built using with flutter with bloc pattern. It uses Minimax algorithm for making pradiction of next move"
@@ -101,79 +101,77 @@ const ProjectCard: React.FC<{
                 controls.start("initial");
             }}
         >
-            <AnimateSharedLayout type="crossfade">
-                <AnimatePresence>
-                    <ProjectImg
-                        src={img}
-                        loading="lazy"
-                        variants={projectImgVariant}
-                        initial="initial"
-                        animate={controls}
-                        alt="project-img"
-                    />
+            <AnimatePresence>
+                <ProjectImg
+                    src={img}
+                    loading="lazy"
+                    variants={projectImgVariant}
+                    initial="initial"
+                    animate={controls}
+                    alt="project-img"
+                />
 
-                    <ProjectInfo
-                        key={img}
-                        variants={projectInfoVariants}
+                <ProjectInfo
+                    key={img}
+                    variants={projectInfoVariants}
+                    initial="initial"
+                    animate={controls}
+                >
+                    <ProjectTitle>
+                        {/* <Sparkles color="#ff5e78" textColor="#FFF"> */}
+                            {title}
+                        {/* </Sparkles> */}
+                    </ProjectTitle>
+                    <ProjectDetails
+                        variants={projectDetailsVariants}
                         initial="initial"
                         animate={controls}
                     >
-                        <ProjectTitle>
-                            <Sparkles color="#ff5e78" textColor="#FFF">
-                                {title}
-                            </Sparkles>
-                        </ProjectTitle>
-                        <ProjectDetails
-                            variants={projectDetailsVariants}
-                            initial="initial"
-                            animate={controls}
-                        >
-                            <ProjectDispcription
-                                variants={projectDetailsVariants}
-                            >
-                                {description}
-                            </ProjectDispcription>
-                            <TechStack variants={projectDetailsVariants}>
-                                {tech.map((item) => (
-                                    <p key={item}>{item}</p>
-                                ))}
-                            </TechStack>
-                            <Links variants={projectDetailsVariants}>
-                                {links?.map((link, idx) => {
-                                    if (idx == 0) {
-                                        return (
-                                            <LinkButton
-                                                href={link}
-                                                target="_blank"
-                                            >
-                                                <AnimatedIcon
-                                                    animation={github}
-                                                    size={40}
-                                                    color="#fdb99b"
-                                                />
-                                            </LinkButton>
-                                        );
-                                    }
-                                    if (link) {
-                                        return (
-                                            <LinkButton
-                                                href={link}
-                                                target="_blank"
-                                            >
-                                                <AnimatedIcon
-                                                    animation={mmx}
-                                                    size={40}
-                                                    color="#fdb99b"
-                                                />
-                                            </LinkButton>
-                                        );
-                                    }
-                                })}
-                            </Links>
-                        </ProjectDetails>
-                    </ProjectInfo>
-                </AnimatePresence>
-            </AnimateSharedLayout>
+                        <ProjectDispcription variants={projectDetailsVariants}>
+                            {description}
+                        </ProjectDispcription>
+                        <TechStack variants={projectDetailsVariants}>
+                            {tech.map((item, idx) => (
+                                <p key={idx.toString()}>{item}</p>
+                            ))}
+                        </TechStack>
+                        <Links variants={projectDetailsVariants}>
+                            {links?.map((link, idx) => {
+                                if (idx == 0) {
+                                    return (
+                                        <LinkButton
+                                            href={link}
+                                            target="_blank"
+                                            key="g-link"
+                                        >
+                                            <AnimatedIcon
+                                                animation={github}
+                                                size={40}
+                                                color="#fdb99b"
+                                            />
+                                        </LinkButton>
+                                    );
+                                }
+                                if (link) {
+                                    return (
+                                        <LinkButton
+                                            href={link}
+                                            target="_blank"
+                                            key="web-link"
+                                        >
+                                            <AnimatedIcon
+                                                animation={mmx}
+                                                size={40}
+                                                color="#fdb99b"
+                                            />
+                                        </LinkButton>
+                                    );
+                                }
+                            })}
+                        </Links>
+                    </ProjectDetails>
+                </ProjectInfo>
+            </AnimatePresence>
         </ProjectCardWrapper>
     );
 };

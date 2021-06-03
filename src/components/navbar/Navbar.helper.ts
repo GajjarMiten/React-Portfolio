@@ -22,4 +22,6 @@ const handleNavClick = (index: number, navItems: any[]): void => {
     });
 };
 
+
+
 export { handleNavClick };

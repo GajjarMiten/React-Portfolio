@@ -34,7 +34,7 @@ const theme = {
     iconColor: "#838383",
     accentColor: "#a770ef",
     navBackGround: "#181818",
-    navbarWidth: "80px",
+    navbarWidth: "60px",
     navbarWidthMD: "60px",
     headingColor: "white",
     headingLG: "4rem",

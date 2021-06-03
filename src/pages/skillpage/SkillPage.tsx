@@ -37,18 +37,16 @@ const SkillPage: React.VFC = () => {
     return (
         <Wrapper style={{ minHeight: "100vh" }}>
             <BottomBorder>
-                <BouncyText text="Skills" id={300} />
+                <BouncyText text="Experince" id={300} />
             </BottomBorder>
             <Container>
                 <SlideInWhenIn>
                     <Text style={{ marginTop: "2rem" }}>
-                        I spent my most of time by creating UI and Interfaces
-                        for websites & applications. Lorem ipsum dolor, sit amet
-                        consectetur adipisicing elit. Incidunt a, cumque
-                        reprehenderit quaerat placeat fugiat maxime enim autem.
-                        Ipsam veritatis alias magnam temporibus harum,
-                        cupiditate at? Eveniet inventore ducimus hic. Lorem
-                        ipsum dolor sit,
+                        I spend my most of time by creating UI and Interfaces
+                        for websites & applications. My goal as a developer is
+                        to write less code more efficiently, using the power
+                        of modern frameworks (React and
+                        Flutter). 
                     </Text>
                 </SlideInWhenIn>
                 <SkillWrapper>

@@ -2,13 +2,12 @@ import React from "react";
 import BouncyText from "../../components/bouncyText/BouncyText";
 import Button from "../../components/button/Button";
 import SoundDiv from "../../components/soundDiv/SoundDiv";
-import Wrapper from "../../components/wrapper/Wrapper";
 import { Text } from "../../global/GlobalComponents";
 import SlideInWhenIn from "../../hoc/SlideInWhenIn";
-import { Container } from "./EntryPage.style";
+import { Container,Wrapper } from "./EntryPage.style";
 
 import boop from "../../assets/sounds/boop.mp3";
-
+import Navbar from "../../components/navbar/Navbar";
 
 const EntryPage: React.VFC = () => {
     const handleClick = () => {
@@ -31,6 +30,7 @@ const EntryPage: React.VFC = () => {
                     </SoundDiv>
                 </SlideInWhenIn>
             </Container>
+            <Navbar />
         </Wrapper>
     );
 };

@@ -1,15 +1,9 @@
 import React from "react";
 import UseAnimations from "react-useanimations";
 import styled from "styled-components";
-import { device } from "../../style/mediaQueries";
 
-const Icon = styled(UseAnimations)`
 
-    @media ${device.mobileL}{
-        font-size: 30;
-    }
-
-`;
+const Icon = styled(UseAnimations)``;
 
 const AnimatedIcon: React.FC<{
     animation: any;

@@ -8,7 +8,7 @@ const Container = styled.div`
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 600px;
+    grid-template-rows: auto;
     place-items: center;
     @media ${device.tablet} {
         grid-template-columns: 1fr;
@@ -20,7 +20,7 @@ const About = styled.div`
     ${center}
     flex-direction:column;
     max-width: 50vw;
-    /* text-align: center; */
+
     @media ${device.tablet} {
         max-width: 100%;
     }

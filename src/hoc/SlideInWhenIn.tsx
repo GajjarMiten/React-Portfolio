@@ -13,7 +13,7 @@ const slideInVariants: Variants = {
         transition: {
             type: "spring",
             duration: 0.8,
-            delay: 0.6,
+            delay: 1,
             stiffness: 90,
             staggerChildren: 0.1,
         },
