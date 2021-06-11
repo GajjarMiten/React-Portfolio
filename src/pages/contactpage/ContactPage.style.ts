@@ -41,7 +41,9 @@ const InfoTextCard = styled(motion.div)`
     position: relative;
     border-radius: 12px;
     box-shadow: 7px 8px 20px rgba(0, 0, 0, 0.14);
-    background-color: ${({ theme }) => theme.navBackGround};
+    background: rgba(24, 24, 24, 0.4);
+    transition: all 0.3s ease-out;
+    backdrop-filter: blur(5px);
     transition: all 0.3s linear;
     ${center}
     &:hover {
@@ -75,37 +77,34 @@ const SocialBar = styled(motion.div)`
     flex-wrap: wrap;
 `;
 
-const SocialIcon = styled(motion.a).attrs({
+const SocialIcon = styled.a.attrs({
     target: "_blank",
     rel: "noreferrer",
 })`
     padding: 10px;
 
-    i {
-        color: white;
-        font-size: ${({ theme }) => `calc(${theme.headingLG} + 20px)`};
+    transition: all 0.3s ease-out;
+    img {
+        height: 50px;
+        width: 50px;
     }
-
     &:hover {
-        i {
-            color: ${({ theme }) => theme.accentColor};
+        transform: translateY(-10px);
+        img {
+            filter: brightness(50%);
         }
     }
 
-    @media ${device.laptopL} {
-        i {
-            font-size: ${({ theme }) => theme.headingLG};
-        }
-    }
-
-    @media ${device.mobileL} {
-        i {
-            font-size: ${({ theme }) => theme.headingMD};
+    @media ${device.tablet} {
+        img {
+            height: 40px;
+            width: 40px;
         }
     }
     @media ${device.mobileS} {
-        i {
-            font-size: ${({ theme }) => theme.headingSM};
+        img {
+            height: 30px;
+            width: 30px;
         }
     }
 `;

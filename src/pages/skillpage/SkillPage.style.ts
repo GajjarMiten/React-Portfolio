@@ -44,7 +44,7 @@ const Parallex = styled.div.attrs({ id: "parallex" })`
     width: 100%;
 `;
 
-const ParallexItem = styled.p<{ x: number; y: number; size: number }>`
+const ParallexItem = styled.div<{ x: number; y: number; size: number }>`
     position: absolute;
     top: ${({ y }) => `${y}%`};
     left: ${({ x }) => `${x}%`};

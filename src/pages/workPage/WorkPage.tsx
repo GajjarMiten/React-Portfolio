@@ -3,6 +3,8 @@ import React from "react";
 import BouncyText from "../../components/bouncyText/BouncyText";
 import Wrapper from "../../components/wrapper/Wrapper";
 import { BottomBorder } from "../../global/GlobalComponents";
+import githubIcon from "../../assets/icons/github.svg";
+import linkIcon from "../../assets/icons/link.svg";
 import {
     Container,
     LinkButton,
@@ -19,15 +21,12 @@ import {
 import { AnimatePresence, useAnimation } from "framer-motion";
 
 import {
+    projectCardvariants,
     projectDetailsVariants,
     projectImgVariant,
     projectInfoVariants,
 } from "./WorkPage.variants";
-import Sparkles from "../../components/sparkle/Sparkle";
-import AnimatedIcon from "../../components/animatedIcon/AnimatedIcon";
-
-import github from "react-useanimations/lib/github";
-import mmx from "react-useanimations/lib/maximizeMinimize2";
+import useInViewAnimate from "../../hooks/useInViewAnimate";
 
 const WorkPage: React.VFC = () => {
     return (
@@ -89,16 +88,22 @@ const ProjectCard: React.FC<{
     tech: string[];
     links?: string[];
 }> = ({ img, title, description, tech, links }) => {
-    const controls = useAnimation();
+    const projectInfoControls = useAnimation();
+
+    const { ref, controls } = useInViewAnimate("hidden", "animate");
 
     return (
         <ProjectCardWrapper
+            ref={ref}
+            variants={projectCardvariants}
+            initial="hidden"
+            animate={controls}
             onMouseEnter={async () => {
-                controls.start("animate");
+                projectInfoControls.start("animate");
             }}
             onMouseLeave={async () => {
-                controls.start("end");
-                controls.start("initial");
+                projectInfoControls.start("end");
+                projectInfoControls.start("initial");
             }}
         >
             <AnimatePresence>
@@ -107,7 +112,7 @@ const ProjectCard: React.FC<{
                     loading="lazy"
                     variants={projectImgVariant}
                     initial="initial"
-                    animate={controls}
+                    animate={projectInfoControls}
                     alt="project-img"
                 />
 
@@ -115,17 +120,17 @@ const ProjectCard: React.FC<{
                     key={img}
                     variants={projectInfoVariants}
                     initial="initial"
-                    animate={controls}
+                    animate={projectInfoControls}
                 >
                     <ProjectTitle>
                         {/* <Sparkles color="#ff5e78" textColor="#FFF"> */}
-                            {title}
+                        {title}
                         {/* </Sparkles> */}
                     </ProjectTitle>
                     <ProjectDetails
                         variants={projectDetailsVariants}
                         initial="initial"
-                        animate={controls}
+                        animate={projectInfoControls}
                     >
                         <ProjectDispcription variants={projectDetailsVariants}>
                             {description}
@@ -144,10 +149,9 @@ const ProjectCard: React.FC<{
                                             target="_blank"
                                             key="g-link"
                                         >
-                                            <AnimatedIcon
-                                                animation={github}
-                                                size={40}
-                                                color="#fdb99b"
+                                            <img
+                                                src={githubIcon}
+                                                alt="github-svg"
                                             />
                                         </LinkButton>
                                     );
@@ -159,10 +163,9 @@ const ProjectCard: React.FC<{
                                             target="_blank"
                                             key="web-link"
                                         >
-                                            <AnimatedIcon
-                                                animation={mmx}
-                                                size={40}
-                                                color="#fdb99b"
+                                            <img
+                                                src={linkIcon}
+                                                alt="link-svg"
                                             />
                                         </LinkButton>
                                     );

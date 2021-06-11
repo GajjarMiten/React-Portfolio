@@ -68,4 +68,20 @@ const projectDetailsVariants: Variants = {
     },
 };
 
-export { projectImgVariant, projectInfoVariants, projectDetailsVariants };
+const projectCardvariants: Variants = {
+    hidden: {
+        opacity: 0,
+        scale: 0.5,
+    },
+    animate: {
+        opacity: 1,
+        scale: 1,
+        transition: {
+            type: "tween",
+            duration: 0.7,
+            ease: "easeOut",
+        },
+    },
+};
+
+export { projectImgVariant, projectInfoVariants, projectDetailsVariants,projectCardvariants };

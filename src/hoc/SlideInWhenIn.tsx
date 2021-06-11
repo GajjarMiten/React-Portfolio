@@ -5,7 +5,7 @@ import useInViewAnimate from "../hooks/useInViewAnimate";
 const slideInVariants: Variants = {
     hidden: {
         opacity: 0,
-        y: "50%",
+        y: "20%",
     },
     visible: {
         opacity: 1,
@@ -14,7 +14,8 @@ const slideInVariants: Variants = {
             type: "spring",
             duration: 0.8,
             delay: 1,
-            stiffness: 90,
+            // damping: 25,
+            stiffness: 120,
             staggerChildren: 0.1,
         },
     },

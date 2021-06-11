@@ -4,14 +4,14 @@ import { device, size } from "../../style/mediaQueries";
 import { center, column } from "../../style/utils";
 
 const Nav = styled(motion.nav).attrs({ id: "navbar" })`
-    padding: 0px 40px;
+    padding: 0px 28px;
     display: flex;
     align-items: center;
     /* justify-content: space-between; */
     max-width: ${size.laptopL};
     width: 100%;
     height: ${({ theme }) => theme.navbarWidth};
-    background: rgba(24, 24, 24, 0.8);
+    background: rgba(24, 24, 24, 0.4);
     transition: all 0.3s ease-out;
     backdrop-filter: blur(5px);
     z-index: 19;
@@ -86,19 +86,18 @@ const NavItem = styled(motion.a)`
     /* &.active {
         color: ${({ theme }) => theme.accentColor};
     } */
-    i {
-        font-size: 2.6rem;
+    img {
         display: none;
+        height: 30px;
+        width: 30px;
     }
     p {
         font-family: ${({ theme }) => theme.fontText};
         font-size: ${({ theme }) => theme.textMD};
     }
     &:hover {
-        cursor: pointer;
-        i {
-            display: none;
-        }
+        /* cursor: pointer; */
+
         p {
             text-shadow: 0px 0px 5px ${({ theme }) => theme.accentColor};
             color: ${({ theme }) => theme.accentColor};
@@ -107,27 +106,18 @@ const NavItem = styled(motion.a)`
     }
 
     @media ${device.laptopL} {
-        i {
-            font-size: 2rem;
-        }
         p {
             font-size: ${({ theme }) => theme.textMD};
         }
     }
 
     @media ${device.laptop} {
-        i {
-            font-size: 1.6rem;
-        }
         p {
             font-size: ${() => "1rem"};
         }
     }
 
     @media ${device.tablet} {
-        i {
-            font-size: 2.3rem;
-        }
         p {
             font-size: ${({ theme }) => theme.textSM};
             font-family: ${({ theme }) => theme.fontText};
@@ -135,8 +125,7 @@ const NavItem = styled(motion.a)`
     }
     @media ${device.mobileL} {
         width: 100%;
-        i {
-            font-size: 2rem;
+        img {
             display: block;
         }
         p {
@@ -149,16 +138,8 @@ const NavItem = styled(motion.a)`
 
 const NavItems = styled(motion.ul)`
     ${center};
-    display: flex;
-    /* justify-content: flex-end; */
-    /* flex-direction: column; */
-
     width: 100%;
     flex: 2;
-
-    @media ${device.laptopL} {
-        gap: 8px;
-    }
 
     @media ${device.tablet} {
         justify-content: center;
@@ -166,18 +147,16 @@ const NavItems = styled(motion.ul)`
 
     @media ${device.mobileL} {
         justify-content: space-around;
-        gap: 0;
     }
 `;
 
 const ExtraItems = styled(NavItems)`
     max-height: 150px;
-    gap: 8px;
     flex: 0;
-
+    overflow-y: hidden;
     @media ${device.laptopL} {
         max-height: 130px;
-        gap: 4px;
+        gap: 20px;
     }
     @media ${device.mobileL} {
         display: none;
@@ -185,21 +164,13 @@ const ExtraItems = styled(NavItems)`
 `;
 
 const ExtraItem = styled(NavItem)`
-    width: 100%;
-    i {
+    width: 20px;
+    margin-right: 5px;
+    img {
+        transform: scale(0.8);
         display: block;
     }
     &:hover {
-        i {
-            display: block;
-            color: ${({ theme }) => theme.accentColor};
-        }
-    }
-
-    @media ${device.laptopL} {
-        i {
-            font-size: 1.6rem;
-        }
     }
 `;
 

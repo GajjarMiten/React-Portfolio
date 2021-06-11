@@ -7,14 +7,14 @@ const ButtonStyle = styled(motion.button).attrs({ className: "focusable" })`
     width: 300px;
     background: none;
     position: relative;
-    color: white;
+    color: ${({ theme }) => theme.textColor};
     font-size: ${({ theme }) => theme.textLG};
     font-family: ${({ theme }) => theme.fontText};
     outline: none;
     border: solid 2px white;
     border-radius: 12px;
     &:hover {
-        cursor: pointer;
+        /* cursor: pointer; */
     }
     @media ${device.laptopL} {
         padding: 1rem;

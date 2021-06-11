@@ -4,7 +4,7 @@ import { bounce, bounceIn } from "./animations";
 
 const GlobalStyle = createGlobalStyle`
     *{  
-        /* cursor: none; */
+        cursor: none;
         padding:0;
         margin:0;
         box-sizing:border-box;
@@ -29,11 +29,12 @@ const GlobalStyle = createGlobalStyle`
 
 const theme = {
     midColor: "#cf8bf3",
-    textColor: "#fdb99b",
-    primaryColor: "#252627",
+    // textColor: "#E2F3F5",
+    textColor: "#e2f3f5",
+    primaryColor: "#0E153A",
     iconColor: "#838383",
-    accentColor: "#a770ef",
-    navBackGround: "#181818",
+    accentColor: "#22D1EE",
+    navBackGround: "#3D5AF1",
     navbarWidth: "60px",
     navbarWidthMD: "60px",
     headingColor: "white",

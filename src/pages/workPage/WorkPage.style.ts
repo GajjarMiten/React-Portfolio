@@ -81,9 +81,13 @@ const LinkButton = styled(motion.a).attrs({
     height: 50px;
     width: 70px;
     border-radius: 10px;
-    transition: all 0.8s ease-out;
+    transition: all 0.8s linear;
+    img {
+        height: 30px;
+        width: 30px;
+    }
     &:hover {
-        border: Solid 2px white;
+        border: Solid 2px ${({ theme }) => theme.accentColor};
     }
 `;
 
@@ -98,7 +102,7 @@ const ProjectInfo = styled(motion.div)`
     position: absolute;
     height: 100%;
     width: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(14, 21, 58, 0.8);
     backdrop-filter: blur(5px);
     display: flex;
     flex-direction: column;

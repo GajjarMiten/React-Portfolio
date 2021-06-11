@@ -1,21 +1,36 @@
 import React, { useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
-import { Nav, NavBrand, NavItem, NavItems,ExtraItem,ExtraItems } from "./Navbar.style";
+import {
+    Nav,
+    NavBrand,
+    NavItem,
+    NavItems,
+    ExtraItem,
+    ExtraItems,
+} from "./Navbar.style";
 
 import { handleNavClick } from "./Navbar.helper";
 
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
-import SoundDiv from "../soundDiv/SoundDiv";
-import AnimatedIcon from "../animatedIcon/AnimatedIcon";
-import volum from "react-useanimations/lib/volume";
+
 import { useSettings } from "../../provider/Settings.provider";
 
+import home from "../../assets/icons/home.svg";
+import account from "../../assets/icons/account.svg";
+import experience from "../../assets/icons/experience.svg";
+import trophy from "../../assets/icons/trophy.svg";
+import envelope from "../../assets/icons/envelope.svg";
+import blog from "../../assets/icons/blog.svg";
+import code from "../../assets/icons/code.svg";
+import volume from "../../assets/icons/volume.svg";
+import mute from "../../assets/icons/mute.svg";
+
 const navItems = [
-    { icon: "las la-home", title: "Home" },
-    { icon: "las la-user-circle", title: "About" },
-    { icon: "las la-cog", title: "Experince" },
-    { icon: "las la-trophy", title: "Work" },
-    { icon: "las la-envelope", title: "Contact" },
+    { icon: home, title: "Home" },
+    { icon: account, title: "About" },
+    { icon: experience, title: "Experince" },
+    { icon: trophy, title: "Work" },
+    { icon: envelope, title: "Contact" },
 ];
 
 const motionProps = {
@@ -100,19 +115,17 @@ const Navbar: React.FC = () => {
                     {navItems.map((item, idx) => {
                         return (
                             <li key={idx.toString()}>
-                                <SoundDiv>
-                                    <NavItem
-                                        className={idx === 0 ? "active" : ""}
-                                        id={idx.toString()}
-                                        onClick={() =>
-                                            handleNavClick(idx, navItems)
-                                        }
-                                        variants={motionProps}
-                                    >
-                                        <i className={`${item.icon}`}></i>
-                                        <p>{item.title}</p>
-                                    </NavItem>
-                                </SoundDiv>
+                                <NavItem
+                                    className={idx === 0 ? "active" : ""}
+                                    id={idx.toString()}
+                                    onClick={() =>
+                                        handleNavClick(idx, navItems)
+                                    }
+                                    variants={motionProps}
+                                >
+                                    <img src={item.icon} alt="nav-icon" />
+                                    <p>{item.title}</p>
+                                </NavItem>
                             </li>
                         );
                     })}
@@ -126,12 +139,12 @@ const Navbar: React.FC = () => {
                     <ExtraItems>
                         <li>
                             <ExtraItem as={motion.div} variants={motionProps}>
-                                <i className="lab la-blogger"></i>
+                                <img src={blog} alt="nav-icon" />
                             </ExtraItem>
                         </li>
                         <li>
                             <ExtraItem as={motion.div} variants={motionProps}>
-                                <i className="las la-terminal"></i>
+                                <img src={code} alt="nav-icon" />
                             </ExtraItem>
                         </li>
                         <li>
@@ -148,17 +161,36 @@ const Navbar: React.FC = () => {
 
 export default Navbar;
 
+const soundVariants = {
+    animate: {
+        y: ["-100%", "0%"],
+        opacity: [0, 1],
+        transition: {
+            type: "tween",
+            ease: "easeOut",
+            duration: 0.7,
+        },
+    },
+};
+
 const SoundIcon: React.FC = () => {
     const { value: sound, toggleSound } = useSettings();
 
+    const controls = useAnimation();
+
+    useEffect(() => {
+        controls.start("animate");
+    }, [sound]);
+
     return (
-        <AnimatedIcon
-            animation={volum}
-            loop={false}
-            size={30}
-            color="#838383"
-            reversed={!sound}
-            onClick={toggleSound}
+        <motion.img
+            src={sound ? mute : volume}
+            alt="nav-icon"
+            variants={soundVariants}
+            animate={controls}
+            onTap={() => {
+                toggleSound();
+            }}
         />
     );
 };

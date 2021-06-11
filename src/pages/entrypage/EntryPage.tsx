@@ -1,12 +1,11 @@
 import React from "react";
 import BouncyText from "../../components/bouncyText/BouncyText";
 import Button from "../../components/button/Button";
-import SoundDiv from "../../components/soundDiv/SoundDiv";
+
 import { Text } from "../../global/GlobalComponents";
 import SlideInWhenIn from "../../hoc/SlideInWhenIn";
-import { Container,Wrapper } from "./EntryPage.style";
+import { Container, Wrapper } from "./EntryPage.style";
 
-import boop from "../../assets/sounds/boop.mp3";
 import Navbar from "../../components/navbar/Navbar";
 
 const EntryPage: React.VFC = () => {
@@ -25,9 +24,7 @@ const EntryPage: React.VFC = () => {
                     <Text>Gujarat, India.</Text>
                     <p>&nbsp;</p>
                     <p>&nbsp;</p>
-                    <SoundDiv soundProp={boop}>
-                        <Button onClick={handleClick}>Say Hello 👋</Button>
-                    </SoundDiv>
+                    <Button onClick={handleClick}>Say Hello 👋</Button>
                 </SlideInWhenIn>
             </Container>
             <Navbar />

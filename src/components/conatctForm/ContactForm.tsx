@@ -1,4 +1,4 @@
-import { Variants } from "framer-motion";
+import { Variants } from "framer-motion/types/types";
 import React from "react";
 import useInViewAnimate from "../../hooks/useInViewAnimate";
 
@@ -16,7 +16,7 @@ const buttonVariants: Variants = {
         boxShadow: "none",
     },
     hover: {
-        boxShadow: "0px 0px 20px 1px #a770ef",
+        boxShadow: "0px 0px 20px 1px #22D1EE",
         backgroundColor: "rgba(255, 255, 255, 0.1)",
         transition: {
             duration: 0.8,

@@ -5,7 +5,7 @@ const Wrapper = styled.div`
     min-width: 100%;
     min-height: 100vh;
     display: grid;
-    grid-template-rows: auto 60px;
+    grid-template-rows: 1fr 60px;
 `;
 
 const Container = styled.div`
@@ -22,6 +22,7 @@ const Container = styled.div`
     }
 
     @media ${device.mobileL} {
+        min-height: 100%;
         padding: 0 20px;
         min-width: 100%;
     }

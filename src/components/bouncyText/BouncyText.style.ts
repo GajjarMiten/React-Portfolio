@@ -14,7 +14,8 @@ const BouncyWord = styled.span.attrs({ className: "word" })`
     animation-duration: 1s;
     animation-direction: both;
     animation-fill-mode: forwards;
-   
+    /* text-shadow: 10px 10px 10px rgba(0,0,0,0.5); */
+
     @media ${device.laptopL} {
         font-size: ${({ theme }) => theme.headingLG};
     }

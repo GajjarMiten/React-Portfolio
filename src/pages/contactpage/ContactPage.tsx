@@ -1,11 +1,6 @@
 import { Variants } from "framer-motion";
 import React from "react";
-import github from "react-useanimations/lib/github";
-import linkedin from "react-useanimations/lib/linkedin";
-import instagram from "react-useanimations/lib/instagram";
-import twitter from "react-useanimations/lib/twitter";
-import codepen from "react-useanimations/lib/codepen";
-import AnimatedIcon from "../../components/animatedIcon/AnimatedIcon";
+
 import BouncyText from "../../components/bouncyText/BouncyText";
 import ContactForm from "../../components/conatctForm/ContactForm";
 import InlineLink from "../../components/inlineLink/InlineLink";
@@ -27,6 +22,12 @@ import {
     SocialBar,
     SocialIcon,
 } from "./ContactPage.style";
+
+import codepen from "../../assets/icons/codepen.svg";
+import github from "../../assets/icons/github.svg";
+import linkedin from "../../assets/icons/linkedin.svg";
+import instagram from "../../assets/icons/instagram.svg";
+import twitter from "../../assets/icons/twitter.svg";
 
 const ContactPage: React.VFC = () => {
     return (
@@ -87,19 +88,19 @@ const ContactInfoContainer: React.VFC = () => {
             </InfoTextCard>
             <SocialBar variants={socialBarVariant}>
                 <SocialIcon href="https://codepen.io/Mi10/">
-                    <AnimatedIcon animation={codepen} />
+                    <img src={codepen} alt="social-icon" />
                 </SocialIcon>
                 <SocialIcon href="https://github.com/GajjarMiten/">
-                    <AnimatedIcon animation={github} />
+                    <img src={github} alt="social-icon" />
                 </SocialIcon>
                 <SocialIcon href="https://www.linkedin.com/in/mitengajjar/">
-                    <AnimatedIcon animation={linkedin} />
+                    <img src={linkedin} alt="social-icon" />
                 </SocialIcon>
                 <SocialIcon href="https://twitter.com/GajjarMiten/">
-                    <AnimatedIcon animation={twitter} />
+                    <img src={twitter} alt="social-icon" />
                 </SocialIcon>
                 <SocialIcon href="https://www.instagram.com/_.mi10._/">
-                    <AnimatedIcon animation={instagram} loop={false} />
+                    <img src={instagram} alt="social-icon" />
                 </SocialIcon>
             </SocialBar>
             <MadeWithLine variants={socialBarVariant}>

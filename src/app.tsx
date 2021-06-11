@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { GlobalStyle } from "./style/global";
 import styled from "styled-components";
 import Base from "./components/base/Base";

@@ -9,7 +9,7 @@ const buttonVariants: Variants = {
     hover: {
         // cursor: "pointer",
 
-        boxShadow: "0px 0px 20px 1px #a770ef",
+        boxShadow: "0px 0px 20px 1px #22D1EE",
         backgroundColor: "rgba(255, 255, 255, 0.1)",
         transition: {
             duration: 0.8,
