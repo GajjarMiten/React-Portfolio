@@ -66,6 +66,10 @@ const projectDetailsVariants: Variants = {
             when: "beforeChildren",
         },
     },
+    initialMob: {
+        y: "00%",
+        opacity: 1,
+    },
 };
 
 const projectCardvariants: Variants = {
@@ -84,4 +88,9 @@ const projectCardvariants: Variants = {
     },
 };
 
-export { projectImgVariant, projectInfoVariants, projectDetailsVariants,projectCardvariants };
+export {
+    projectImgVariant,
+    projectInfoVariants,
+    projectDetailsVariants,
+    projectCardvariants,
+};

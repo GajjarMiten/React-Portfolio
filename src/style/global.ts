@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { bounce, bounceIn } from "./animations";
 
-
 const GlobalStyle = createGlobalStyle`
     *{  
         cursor: none;
@@ -12,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
     }
    
     body{
-        background: #252627;
+        background: #0e153a;;
     }
     ::-webkit-scrollbar {
         display: none; 

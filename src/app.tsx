@@ -42,8 +42,8 @@ const AppWrapper = styled.main`
     max-width: ${size.laptopL};
     margin: 0 auto;
     position: relative;
-    border-left: solid 2px white;
-    border-right: solid 2px white;
+    border-left: solid 2px ${({ theme }) => theme.accentColor};
+    border-right: solid 2px ${({ theme }) => theme.accentColor};
     @media ${device.laptopL} {
         border: none;
     }

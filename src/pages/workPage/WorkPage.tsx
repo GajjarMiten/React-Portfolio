@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import BouncyText from "../../components/bouncyText/BouncyText";
 import Wrapper from "../../components/wrapper/Wrapper";
@@ -27,6 +27,7 @@ import {
     projectInfoVariants,
 } from "./WorkPage.variants";
 import useInViewAnimate from "../../hooks/useInViewAnimate";
+import { device } from "../../style/mediaQueries";
 
 const WorkPage: React.VFC = () => {
     return (
@@ -92,6 +93,22 @@ const ProjectCard: React.FC<{
 
     const { ref, controls } = useInViewAnimate("hidden", "animate");
 
+    const mediaQuery = window.matchMedia(device.mobileL);
+    let inital = "initial";
+    const setAnimation = () => {
+        if (mediaQuery.matches) {
+            inital = "initialMob";
+        } else {
+            inital = "initial";
+        }
+    };
+    setAnimation();
+    useEffect(() => {
+        window.addEventListener("resize", setAnimation);
+
+        return () => window.removeEventListener("resize", setAnimation);
+    }, []);
+
     return (
         <ProjectCardWrapper
             ref={ref}
@@ -129,7 +146,7 @@ const ProjectCard: React.FC<{
                     </ProjectTitle>
                     <ProjectDetails
                         variants={projectDetailsVariants}
-                        initial="initial"
+                        initial={inital}
                         animate={projectInfoControls}
                     >
                         <ProjectDispcription variants={projectDetailsVariants}>

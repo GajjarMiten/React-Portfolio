@@ -44,7 +44,7 @@ const Input = styled(motion.input)`
 
     &::placeholder {
         color: ${({ theme }) => theme.textColor};
-        filter: brightness(40%);
+        filter: brightness(70%);
     }
 
     &:focus {
@@ -85,7 +85,7 @@ const InputArea = styled(motion.textarea)`
 
     resize: none;
     &::placeholder {
-        filter: brightness(40%);
+        filter: brightness(70%);
         color: ${({ theme }) => theme.textColor};
     }
 
