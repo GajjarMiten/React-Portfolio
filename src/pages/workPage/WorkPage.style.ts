@@ -139,14 +139,18 @@ const ProjectCardWrapper = styled(motion.div)`
     height: 100%;
     border-radius: 10px;
     overflow: hidden;
-    border: solid 4px ${({ theme }) => theme.accentColor};
-    box-shadow: 7px 8px 20px rgba(0, 0, 0, 0.7);
+    border: solid 4px transparent;
+    box-shadow: 0px 0px 10px rgba(34, 209, 238, 0.5);
     width: 100%;
     max-height: 400px;
     max-width: 800px;
     background: ${({ theme }) => theme.primaryColor};
     position: relative;
     cursor: pointer;
+    transition: border 0.3s linear;
+    &:hover {
+        border: solid 4px ${({ theme }) => theme.accentColor};
+    }
 
     @media ${device.mobileL} {
         border-width: 3px;
